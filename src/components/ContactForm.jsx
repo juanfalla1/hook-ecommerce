@@ -1,11 +1,11 @@
 // src/components/ContactForm.jsx
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState('');
 
   const validate = () => {
     const newErrors = {};
@@ -20,25 +20,37 @@ const ContactForm = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      emailjs.send(
-        'TU_SERVICE_ID',         // Reemplaza con tu Service ID
-        'TU_TEMPLATE_ID',        // Reemplaza con tu Template ID
-        form,
-        'TU_PUBLIC_KEY'          // Reemplaza con tu Public Key (User ID antiguo)
-      )
-      .then(() => {
-        setSubmitted(true);
-        setForm({ name: '', email: '', message: '' });
-      })
-      .catch((err) => {
-        console.error('Error al enviar el formulario:', err);
-      });
+      setStatus('Enviando...');
+      try {
+        const res = await fetch('/api/sendEmail', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nombre: form.name,
+            email: form.email,
+            mensaje: form.message
+          })
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          setSubmitted(true);
+          setForm({ name: '', email: '', message: '' });
+          setStatus('¡Mensaje enviado correctamente!');
+        } else {
+          setStatus(`Error: ${data.error}`);
+        }
+      } catch (err) {
+        console.error('Error al enviar:', err);
+        setStatus('Error al enviar el mensaje');
+      }
     }
   };
 
@@ -60,10 +72,11 @@ const ContactForm = () => {
         {errors.message && <span className="text-red-500 text-sm">{errors.message}</span>}
       </div>
       <button type="submit" className="bg-[#00B4D8] text-white px-4 py-2 rounded hover:bg-[#009cc7]">Enviar</button>
-      {submitted && <p className="text-green-600 text-center">¡Mensaje enviado correctamente!</p>}
+      {status && <p className="text-sm text-center text-gray-700 mt-2">{status}</p>}
     </form>
   );
 };
 
 export default ContactForm;
+
 
