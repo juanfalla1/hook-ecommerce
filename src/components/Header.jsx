@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaSearch, FaShoppingCart } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import logoFull from "../assets/logo-full.png";
 import ContactForm from "./ContactForm";
 
@@ -16,13 +16,13 @@ const Header = () => {
   return (
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between max-h-[100px]">
           {/* LOGO */}
           <a href="#home" className="flex items-center">
             <img
               src={logoFull}
               alt="HOOK Logo"
-              className="h-[80px] w-auto object-contain"
+              className="h-[110px] w-auto object-contain" // ← restaurado
             />
           </a>
 
@@ -45,14 +45,6 @@ const Header = () => {
               <FaSearch size={18} />
             </button>
 
-            {/* Botón carrito */}
-            <button
-              className="bg-[#00B4D8] text-white w-[44px] h-[44px] rounded-full shadow-md hover:scale-105 transition flex items-center justify-center"
-              aria-label="Carrito"
-            >
-              <FaShoppingCart size={18} />
-            </button>
-
             {/* Botón contáctanos */}
             <button
               onClick={() => setShowContactForm(true)}
@@ -64,7 +56,7 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Barra de búsqueda flotante */}
+      {/* BARRA DE BÚSQUEDA FLOTANTE */}
       {showSearch && (
         <div className="fixed top-[100px] right-6 z-50 bg-white shadow-lg border rounded-lg px-4 py-3 w-80">
           <form onSubmit={handleSearchSubmit} className="flex gap-2">
@@ -86,7 +78,7 @@ const Header = () => {
         </div>
       )}
 
-      {/* Modal de contacto */}
+      {/* MODAL FORMULARIO DE CONTACTO */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center px-4">
           <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
@@ -106,3 +98,4 @@ const Header = () => {
 };
 
 export default Header;
+
