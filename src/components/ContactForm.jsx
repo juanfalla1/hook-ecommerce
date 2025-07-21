@@ -1,23 +1,17 @@
-// src/components/ContactForm.jsx
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
 
 const ContactForm = () => {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ nombre: '', email: '', mensaje: '' });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [showForm, setShowForm] = useState(false);
 
-  const toggleForm = () => {
-    setShowForm(!showForm);
-  };
-
   const validate = () => {
     const newErrors = {};
-    if (!form.name.trim()) newErrors.name = 'Nombre requerido';
+    if (!form.nombre.trim()) newErrors.nombre = 'Nombre requerido';
     if (!form.email.trim()) newErrors.email = 'Correo requerido';
     else if (!/\S+@\S+\.\S+/.test(form.email)) newErrors.email = 'Correo inválido';
-    if (!form.message.trim()) newErrors.message = 'Mensaje requerido';
+    if (!form.mensaje.trim()) newErrors.mensaje = 'Mensaje requerido';
     return newErrors;
   };
 
@@ -25,82 +19,80 @@ const ContactForm = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      emailjs.send(
-        'TU_SERVICE_ID',   // ⚠️ Reemplaza
-        'TU_TEMPLATE_ID',  // ⚠️ Reemplaza
-        form,
-        'TU_PUBLIC_KEY'    // ⚠️ Reemplaza
-      )
-      .then(() => {
-        setSubmitted(true);
-        setForm({ name: '', email: '', message: '' });
-      })
-      .catch((err) => {
-        console.error('Error al enviar el formulario:', err);
-      });
+      try {
+        const response = await fetch('/api/sendEmail', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(form),
+        });
+
+        if (response.ok) {
+          setSubmitted(true);
+          setForm({ nombre: '', email: '', mensaje: '' });
+        } else {
+          alert('Error al enviar el mensaje');
+        }
+      } catch (err) {
+        console.error('Error:', err);
+        alert('Error de conexión');
+      }
     }
   };
 
   return (
-    <div className="text-center my-8">
+    <div className="text-center my-6">
       <button
-        onClick={toggleForm}
-        className="bg-[#00B4D8] text-white px-6 py-3 rounded hover:bg-[#009cc7] transition duration-300"
+        onClick={() => setShowForm(!showForm)}
+        className="bg-[#023048] text-white px-6 py-3 rounded hover:bg-[#005a87] transition"
       >
         {showForm ? 'Cerrar formulario' : 'Contáctanos'}
       </button>
 
       {showForm && (
-        <form
-          className="space-y-4 max-w-lg mx-auto mt-6 transition-all duration-500 ease-in-out"
-          onSubmit={handleSubmit}
-        >
+        <form className="mt-6 space-y-4 max-w-lg mx-auto" onSubmit={handleSubmit}>
           <div>
             <input
               type="text"
-              name="name"
-              placeholder="Nombre"
-              value={form.name}
+              name="nombre"
+              value={form.nombre}
               onChange={handleChange}
+              placeholder="Tu nombre"
               className="w-full border p-2 rounded"
             />
-            {errors.name && <span className="text-red-500 text-sm">{errors.name}</span>}
+            {errors.nombre && <span className="text-red-500 text-sm">{errors.nombre}</span>}
           </div>
           <div>
             <input
               type="email"
               name="email"
-              placeholder="Correo"
               value={form.email}
               onChange={handleChange}
+              placeholder="Tu correo"
               className="w-full border p-2 rounded"
             />
             {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
           </div>
           <div>
             <textarea
-              name="message"
-              placeholder="Mensaje"
-              value={form.message}
+              name="mensaje"
+              value={form.mensaje}
               onChange={handleChange}
+              placeholder="Tu mensaje"
               className="w-full border p-2 rounded"
               rows="4"
             />
-            {errors.message && <span className="text-red-500 text-sm">{errors.message}</span>}
+            {errors.mensaje && <span className="text-red-500 text-sm">{errors.mensaje}</span>}
           </div>
-          <button
-            type="submit"
-            className="bg-[#00B4D8] text-white px-4 py-2 rounded hover:bg-[#009cc7]"
-          >
-            Enviar
+          <button type="submit" className="bg-[#00B4D8] text-white px-4 py-2 rounded hover:bg-[#009cc7]">
+            Enviar mensaje
           </button>
-          {submitted && <p className="text-green-600 text-center">¡Mensaje enviado correctamente!</p>}
+          {submitted && <p className="text-green-600 text-center mt-2">¡Mensaje enviado correctamente!</p>}
         </form>
       )}
     </div>
@@ -108,5 +100,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-
-
