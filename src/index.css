@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes loadingBar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.animate-loadingBar {
+  animation: loadingBar 2s ease-in-out forwards;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0px rgba(0, 180, 216, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(0, 180, 216, 1);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(0, 180, 216, 0.5);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s infinite ease-in-out;
+}

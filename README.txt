@@ -1,0 +1,1 @@
+Instrucciones: Ejecuta `npm install` y luego `npm run dev` para ver el proyecto en http://localhost:5173

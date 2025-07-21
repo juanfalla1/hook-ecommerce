@@ -1,0 +1,46 @@
+import React from "react";
+
+const Hero = () => {
+  return (
+    <section
+      id="home"
+      className="relative bg-[#023048] text-white pt-[200px] pb-[120px] text-center overflow-hidden mt-[80px]"
+    >
+      {/* Imagen de fondo con opacidad baja */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-10 z-0"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80')",
+        }}
+      ></div>
+
+      {/* Contenido sobre la imagen */}
+      <div className="relative z-10 max-w-[1200px] mx-auto px-4">
+        <h2 className="text-[2.5rem] font-normal mb-5 tracking-wide text-shadow-lg">
+          Calzado Industrial Premium
+        </h2>
+        <p className="text-lg max-w-[700px] mx-auto mb-10 font-light">
+          Descubre la combinación perfecta de seguridad, comodidad y estilo con
+          HOOK. Diseñado para los profesionales que no comprometen calidad.
+        </p>
+        <div className="flex flex-col md:flex-row justify-center gap-4">
+          <a
+            href="#products"
+            className="inline-block px-8 py-3 bg-[#00B4D8] text-white rounded-full font-semibold uppercase tracking-wider transition duration-300 border-2 border-[#00B4D8] hover:bg-transparent hover:text-[#00B4D8] hover:shadow-lg"
+          >
+            Explora Nuestra Colección
+          </a>
+          <a
+            href="#about"
+            className="inline-block px-8 py-3 border-2 border-white text-white rounded-full font-semibold uppercase tracking-wider hover:bg-white hover:text-[#023048] transition duration-300"
+          >
+            Conoce Más
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
