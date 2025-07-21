@@ -43,7 +43,7 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Contacto</h3>
           <div className="w-[40px] h-[3px] bg-[#00B4D8] mb-4"></div>
-          <p className="text-gray-300 mb-2">Email: contacto@hookcalzado.com</p>
+          <p className="text-gray-300 mb-2">Email: contacto@grouphook.com</p>
           <p className="text-gray-300 mb-2">Teléfono: +52 123 456 7890</p>
           <p className="text-gray-300">Dirección: Av. Industrial 123, CDMX, México</p>
         </div>
