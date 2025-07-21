@@ -36,7 +36,7 @@ const Header = () => {
           </nav>
 
           {/* BOTONES DERECHA */}
-          <div className="flex items-center gap-3 ml-auto">
+          <div className="flex items-center gap-3 mr-[72px]">
             {/* Botón Buscar */}
             <button
               className="bg-[#00B4D8] text-white p-3 rounded-full shadow-md hover:scale-105 transition w-[46px] h-[46px] flex items-center justify-center"
