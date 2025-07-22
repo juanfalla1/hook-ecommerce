@@ -3,13 +3,10 @@ import { FaSearch } from "react-icons/fa";
 import logoFull from "../assets/logo-full.png";
 import ContactForm from "./ContactForm";
 
-const Header = () => {
+const Header = ({ cartItems }) => {
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [showContactForm, setShowContactForm] = useState(false);
-
-  // Simulación temporal para el contador del carrito
-  const cartItems = [{}, {}]; // Reemplaza con lógica real si tienes
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -19,13 +16,13 @@ const Header = () => {
   return (
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between max-h-[132px]">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between max-h-[100px]">
           {/* LOGO */}
           <a href="#home" className="flex items-center">
             <img
               src={logoFull}
               alt="HOOK Logo"
-              className="h-auto max-h-[132px] w-auto object-contain"
+              className="h-auto max-h-[100px] w-auto object-contain"
             />
           </a>
 
@@ -38,17 +35,17 @@ const Header = () => {
             <a href="#testimonials" className="hover:text-[#00B4D8] transition">Testimonios</a>
           </nav>
 
-          {/* BOTONES DERECHA en orden correcto */}
+          {/* BOTONES DERECHA */}
           <div className="flex items-center gap-3">
-            {/* Botón de contacto */}
+            {/* Botón Contáctanos */}
             <button
               onClick={() => setShowContactForm(true)}
-              className="bg-[#00B4D8] text-white px-4 py-2 rounded shadow-md text-sm hover:bg-[#019abd] transition hidden md:block"
+              className="bg-[#00B4D8] text-white px-5 py-2 rounded-full shadow-md text-sm hover:bg-[#019abd] transition hidden md:block"
             >
               Contáctanos
             </button>
 
-            {/* Botón de búsqueda */}
+            {/* Botón Buscar */}
             <button
               className="bg-[#00B4D8] text-white w-12 h-12 rounded-full shadow-md hover:scale-105 transition flex items-center justify-center"
               onClick={() => setShowSearch(!showSearch)}
@@ -56,7 +53,7 @@ const Header = () => {
               <FaSearch size={20} />
             </button>
 
-            {/* Carrito */}
+            {/* Carrito funcional */}
             <a
               href="#cart"
               className="relative bg-[#00B4D8] text-white w-12 h-12 rounded-full shadow-md hover:scale-105 transition flex items-center justify-center"
@@ -116,5 +113,4 @@ const Header = () => {
 };
 
 export default Header;
-
 
