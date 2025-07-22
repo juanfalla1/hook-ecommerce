@@ -11,11 +11,28 @@
     "explore": "EXPLORA NUESTRA COLECCIÓN",
     "learn": "CONOCE MÁS"
   },
-"hero": {
-  "title": "Calzado Industrial Premium",
-  "subtitle": "Descubre la combinación perfecta de seguridad, comodidad y estilo con HOOK. Diseñado para los profesionales que no comprometen calidad.",
-  "button_primary": "Explora Nuestra Colección",
-  "button_secondary": "Conoce Más"
-}
-  
+  "hero": {
+    "title": "Calzado Industrial Premium",
+    "subtitle": "Descubre la combinación perfecta de seguridad, comodidad y estilo con HOOK. Diseñado para los profesionales que no comprometen calidad.",
+    "button_primary": "Explora Nuestra Colección",
+    "button_secondary": "Conoce Más"
+  },
+  "features": {
+    "title": "¿Por qué elegir HOOK?",
+    "subtitle": "Nuestro calzado está diseñado para ofrecer la máxima protección sin sacrificar el estilo o la comodidad.",
+    "items": [
+      {
+        "title": "Seguridad Superior",
+        "description": "Puntera de acero y materiales resistentes para protegerte en cualquier entorno."
+      },
+      {
+        "title": "Comodidad Todo el Día",
+        "description": "Diseño ergonómico con soporte acolchado para largas jornadas de trabajo."
+      },
+      {
+        "title": "Estilo Moderno",
+        "description": "Calzado que combina funcionalidad con un diseño elegante y contemporáneo."
+      }
+    ]
+  }
 }

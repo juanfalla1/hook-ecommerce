@@ -16,5 +16,23 @@
     "subtitle": "Discover the perfect combination of safety, comfort, and style with HOOK. Designed for professionals who demand the best.",
     "button_primary": "Explore Our Collection",
     "button_secondary": "Learn More"
+  },
+  "features": {
+    "title": "Why Choose HOOK?",
+    "subtitle": "Our footwear is designed to offer maximum protection without sacrificing style or comfort.",
+    "items": [
+      {
+        "title": "Superior Safety",
+        "description": "Steel toe cap and durable materials to protect you in any environment."
+      },
+      {
+        "title": "All-Day Comfort",
+        "description": "Ergonomic design with cushioned support for long workdays."
+      },
+      {
+        "title": "Modern Style",
+        "description": "Footwear that blends functionality with a sleek and contemporary design."
+      }
+    ]
   }
 }
