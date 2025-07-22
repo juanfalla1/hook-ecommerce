@@ -1,0 +1,18 @@
+{
+  "menu": {
+    "home": "Home",
+    "products": "Products",
+    "benefits": "Benefits",
+    "about": "About Us",
+    "testimonials": "Testimonials",
+    "contact": "Contact Us"
+  },
+  "cta": {
+    "explore": "EXPLORE OUR COLLECTION",
+    "learn": "LEARN MORE"
+  },
+  "hero": {
+    "title": "Premium Industrial Footwear",
+    "subtitle": "Discover the perfect combination of safety, comfort, and style with HOOK. Designed for professionals who demand the best."
+  }
+}
