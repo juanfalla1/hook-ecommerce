@@ -22,14 +22,17 @@
     "subtitle": "Our footwear is designed to offer maximum protection without sacrificing style or comfort.",
     "items": [
       {
+        "icon": "🦺",
         "title": "Superior Safety",
         "description": "Steel toe and durable materials to protect you in any environment."
       },
       {
+        "icon": "🦶",
         "title": "All-Day Comfort",
         "description": "Ergonomic design with cushioned support for long workdays."
       },
       {
+        "icon": "🌧️",
         "title": "Modern Style",
         "description": "Footwear that blends functionality with sleek, contemporary design."
       }
@@ -113,6 +116,4 @@
     "name": "Hook Axis Footwear"
   }
 }
-
-
 

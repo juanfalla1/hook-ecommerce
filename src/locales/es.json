@@ -1,25 +1,30 @@
 {
-  "menu": {
-    "home": "Inicio",
-    "products": "Productos",
-    "benefits": "Beneficios",
-    "about": "Nosotros",
-    "testimonials": "Testimonios",
-    "contact": "Contáctanos"
-  },
   "cta": {
     "title": "Únete a la Revolución del Calzado Industrial",
     "description": "Descubre por qué HOOK es la elección de los profesionales. Explora nuestra colección y encuentra el calzado perfecto para ti.",
     "button": "Compra Ahora"
   },
-  "hero": {
-    "title": "Calzado Industrial Premium",
-    "subtitle": "Descubre la combinación perfecta de seguridad, comodidad y estilo con HOOK. Diseñado para los profesionales que no comprometen calidad.",
-    "button_primary": "Explora Nuestra Colección",
-    "button_secondary": "Conoce Más"
+  "productSection": {
+    "title": "Nuestros Productos",
+    "description": "Explora nuestra gama de calzado industrial diseñado para cumplir con los más altos estándares.",
+    "addToCart": "AÑADIR AL CARRITO",
+    "viewDetails": "Ver Detalles"
+  },
+  "product": {
+    "name": "Calzado Hook Axis"
+  },
+  "footer": {
+    "aboutTitle": "Sobre Nosotros",
+    "aboutText": "HOOK es una marca dedicada a ofrecer calzado industrial de alta calidad, diseñado para profesionales que buscan seguridad y estilo.",
+    "quickLinks": "Enlaces Rápidos",
+    "contact": "Contacto",
+    "email": "Email: contacto@grouphook.com",
+    "phone": "Teléfono: +52 123 456 7890",
+    "address": "Dirección: Av. Industrial 123, CDMX, México",
+    "rights": "© 2025 HOOK Calzado Industrial. Todos los derechos reservados."
   },
   "testimonials": {
-    "sectionTitle": "Escucha las experiencias de quienes confían en HOOK para sus jornadas laborales.",
+    "title": "Escucha las experiencias de quienes confían en HOOK para sus jornadas laborales.",
     "items": [
       {
         "initials": "JM",
@@ -41,16 +46,25 @@
       }
     ]
   },
-  "productSection": {
-    "title": "Nuestros Productos",
-    "description": "Explora nuestra gama de calzado industrial diseñado para cumplir con los más altos estándares.",
-    "addToCart": "AÑADIR AL CARRITO",
-    "viewDetails": "Ver Detalles"
-  },
-  "product": {
-    "name": "Calzado Hook Axis"
+  "features": {
+    "title": "¿Por qué elegir HOOK?",
+    "subtitle": "Nuestro calzado está diseñado para ofrecer máxima protección sin sacrificar estilo ni comodidad.",
+    "items": [
+      {
+        "icon": "🦺",
+        "title": "Seguridad Superior",
+        "description": "Puntera de acero y materiales duraderos para protegerte en cualquier entorno."
+      },
+      {
+        "icon": "🦶",
+        "title": "Comodidad Extrema",
+        "description": "Diseño ergonómico con soporte acolchado para largas jornadas de trabajo."
+      },
+      {
+        "icon": "🌧️",
+        "title": "Estilo Moderno",
+        "description": "Calzado que combina funcionalidad con un diseño contemporáneo y elegante."
+      }
+    ]
   }
 }
-
-
-
