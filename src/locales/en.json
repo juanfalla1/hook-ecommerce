@@ -8,8 +8,9 @@
     "contact": "Contact Us"
   },
   "cta": {
-    "explore": "EXPLORE OUR COLLECTION",
-    "learn": "LEARN MORE"
+    "title": "Join the Industrial Footwear Revolution",
+    "description": "Discover why HOOK is the choice of professionals. Explore our collection and find the perfect footwear for you.",
+    "button": "Buy Now"
   },
   "hero": {
     "title": "Premium Industrial Footwear",
@@ -53,5 +54,27 @@
       "empathy": "Empathy with the user",
       "design": "Design with identity"
     }
+  },
+  "testimonials": {
+    "title": "What our customers say",
+    "items": [
+      {
+        "quote": "HOOK Pro boots are the most comfortable I have used in years. Perfect for long days in construction.",
+        "name": "Juan Morales",
+        "position": "Constructor"
+      },
+      {
+        "quote": "The design of HOOK Flex shoes is amazing. I feel safe and stylish at work.",
+        "name": "Laura Castro",
+        "position": "Industrial Engineer"
+      },
+      {
+        "quote": "HOOK Ultra is durable and lightweight. Perfect for my work in warehouses.",
+        "name": "Antonio Pérez",
+        "position": "Logistics Operator"
+      }
+    ]
   }
 }
+
+
