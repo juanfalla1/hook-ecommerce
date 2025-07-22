@@ -14,17 +14,17 @@
   },
   "hero": {
     "title": "Calzado Industrial Premium",
-    "subtitle": "Descubre la combinación perfecta de seguridad, comodidad y estilo con HOOK. Diseñado para profesionales que no comprometen la calidad.",
+    "subtitle": "Descubre la mezcla perfecta de seguridad, comodidad y estilo con HOOK. Diseñado para profesionales que no comprometen la calidad.",
     "button_primary": "Explora Nuestra Colección",
     "button_secondary": "Aprende Más"
   },
   "features": {
-    "title": "¿Por qué elegir HOOK?",
+    "title": "¿Por Qué Elegir HOOK?",
     "subtitle": "Nuestro calzado está diseñado para ofrecer la máxima protección sin sacrificar el estilo o la comodidad.",
     "items": [
       {
         "title": "Seguridad Superior",
-        "description": "Puntera de acero y materiales duraderos para protegerte en cualquier entorno."
+        "description": "Punta de acero y materiales duraderos para protegerte en cualquier entorno."
       },
       {
         "title": "Comodidad Todo el Día",
@@ -32,13 +32,13 @@
       },
       {
         "title": "Estilo Moderno",
-        "description": "Calzado que combina funcionalidad con un diseño contemporáneo y elegante."
+        "description": "Calzado que combina funcionalidad con un diseño elegante y contemporáneo."
       }
     ]
   },
   "about": {
     "title": "Sobre HOOK",
-    "description": "En HOOK, creemos que el calzado industrial debe no sólo proteger, sino también inspirar confianza. Nuestra misión es ofrecer productos de alta calidad que combinan tecnología avanzada con diseño moderno.",
+    "description": "En HOOK, creemos que el calzado industrial debe no solo proteger sino también inspirar confianza. Nuestra misión es ofrecer productos de calidad que combinan tecnología avanzada con diseño moderno.",
     "mission": {
       "title": "Misión",
       "description": "Brindar prendas de alto rendimiento que combinan diseño, comodidad y estatus, mejorando la experiencia laboral de los profesionales."
@@ -77,39 +77,6 @@
         "position": "Operador Logístico"
       }
     ]
-  },
-  "form": {
-    "open": "Contáctanos",
-    "close": "Cerrar Formulario",
-    "name_placeholder": "Tu nombre",
-    "email_placeholder": "Tu correo",
-    "message_placeholder": "Tu mensaje",
-    "send": "Enviar Mensaje",
-    "success": "¡Mensaje enviado con éxito!",
-    "errors": {
-      "name": "Nombre requerido",
-      "email": "Correo requerido",
-      "email_invalid": "Correo inválido",
-      "message": "Mensaje requerido"
-    }
-  },
-  "footer": {
-    "about_title": "Sobre Nosotros",
-    "about_text": "HOOK es una marca dedicada a ofrecer calzado industrial de alta calidad, diseñado para profesionales que buscan seguridad y estilo.",
-    "quick_links": "Enlaces Rápidos",
-    "contact": "Contacto",
-    "email": "Email: contacto@grouphook.com",
-    "phone": "Teléfono: +52 123 456 7890",
-    "address": "Dirección: Av. Industrial 123, CDMX, México",
-    "rights": "© 2025 HOOK Calzado Industrial. Todos los derechos reservados."
-  },
-  "productSection": {
-    "title": "Nuestros Productos",
-    "description": "Explora nuestra gama de calzado industrial diseñado para cumplir con los más altos estándares.",
-    "addToCart": "AÑADIR AL CARRITO",
-    "viewDetails": "Ver Detalles"
-  },
-  "product": {
-    "name": "Calzado Hook Axis"
   }
 }
+
