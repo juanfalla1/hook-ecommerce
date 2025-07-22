@@ -1,73 +1,35 @@
-import React, { useState } from "react";
-import axis1 from "../assets/axis1.jpg";
-import axis2 from "../assets/axis2.jpg";
-import axis3 from "../assets/axis3.jpg";
+import React from "react";
+import ProductCard from "./ProductCard";
+
+const products = [
+  {
+    id: 1,
+    name: "Calzado Hook Axis",
+    price: 69400,
+    images: [
+      "/images/axis1.png",
+      "/images/axis2.png",
+      "/images/axis3.png"
+    ]
+  },
+  // Puedes agregar más productos aquí
+];
 
 const ProductList = ({ addToCart }) => {
-  const [activeImage, setActiveImage] = useState(axis1);
-
-  const handleAddToCart = () => {
-    const product = {
-      name: "Calzado Hook Axis",
-      price: 69400, // Precio como número
-      image: activeImage,
-    };
-    addToCart(product);
-  };
-
   return (
-    <section id="products" className="py-[100px] bg-white">
-      <div className="max-w-[1200px] mx-auto px-4 text-center">
-        <h2 className="text-[2rem] text-[#023048] font-bold mb-6">
+    <section id="products" className="py-16 bg-[#f9f9f9]">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#023048] mb-4">
           Nuestros Productos
         </h2>
-        <p className="text-[#333] text-[1.1rem] mb-10">
+        <p className="text-center text-gray-700 max-w-xl mx-auto mb-12">
           Explora nuestra gama de calzado industrial diseñado para cumplir con los más altos estándares.
         </p>
 
-        {/* Card del producto */}
-        <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
-          <div className="relative h-[300px] bg-gray-100">
-            <img
-              src={activeImage}
-              alt="Calzado Hook Axis"
-              className="object-contain w-full h-full transition-transform duration-300 transform hover:scale-105"
-            />
-            {/* Miniaturas clicables */}
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 bg-white bg-opacity-80 px-2 py-1 rounded-full shadow-sm">
-              {[axis1, axis2, axis3].map((img, i) => (
-                <img
-                  key={i}
-                  src={img}
-                  alt={`Vista ${i + 1}`}
-                  className={`w-10 h-10 object-cover cursor-pointer rounded ${
-                    activeImage === img ? "ring-2 ring-[#00B4D8]" : ""
-                  } transition-transform duration-200 hover:scale-110`}
-                  onClick={() => setActiveImage(img)}
-                />
-              ))}
-            </div>
-          </div>
-
-          <div className="p-6 text-left">
-            <h3 className="text-xl font-bold text-[#023048]">
-              Calzado Hook Axis
-            </h3>
-            <p className="text-lg text-[#00B4D8] font-semibold mb-4">
-              ${Number(69400).toLocaleString("es-CO")} COP
-            </p>
-            <div className="flex gap-4">
-              <button
-                onClick={handleAddToCart}
-                className="px-4 py-2 bg-[#00B4D8] text-white rounded-full text-sm hover:bg-[#019abd] transition"
-              >
-                AÑADIR AL CARRITO
-              </button>
-              <button className="px-4 py-2 border border-[#00B4D8] text-[#00B4D8] rounded-full text-sm hover:bg-[#00B4D8] hover:text-white transition">
-                Ver Detalles
-              </button>
-            </div>
-          </div>
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-items-center">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} addToCart={addToCart} />
+          ))}
         </div>
       </div>
     </section>
@@ -75,3 +37,4 @@ const ProductList = ({ addToCart }) => {
 };
 
 export default ProductList;
+
