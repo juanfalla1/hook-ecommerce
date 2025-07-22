@@ -8,10 +8,10 @@ const Header = () => {
   return (
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between max-h-[100px]">
-          
-          {/* Logo alineado más a la izquierda */}
-          <div className="flex-shrink-0 mr-auto">
+        <div className="flex items-center justify-between max-h-[100px] px-4 py-4">
+
+          {/* Logo alineado al borde izquierdo */}
+          <div className="pl-0">
             <a href="#home" className="flex items-center">
               <img
                 src={logoFull}
@@ -36,12 +36,12 @@ const Header = () => {
             </button>
           </nav>
 
-          {/* Espaciador para mantener centrado el nav */}
-          <div className="w-[80px] md:w-[120px]"></div>
+          {/* Espaciador invisible */}
+          <div className="w-[100px] md:w-[120px]"></div>
         </div>
       </header>
 
-      {/* Contact Modal */}
+      {/* Modal de contacto */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center px-4">
           <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
