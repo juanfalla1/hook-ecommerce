@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import { FaShoppingCart } from "react-icons/fa";
 import logoFull from "../assets/logo-full.png";
 import ContactForm from "./ContactForm";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 const Header = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [showContactForm, setShowContactForm] = useState(false);
+  const { cartItems } = useCart();
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -38,6 +40,7 @@ const Header = () => {
 
           {/* BOTONES DERECHA */}
           <div className="flex items-center gap-3">
+            {/* Botón de contacto */}
             <button
               onClick={() => setShowContactForm(true)}
               className="bg-[#00B4D8] text-white px-5 py-2 rounded-full shadow-md text-sm hover:bg-[#019abd] transition hidden md:block"
@@ -45,19 +48,28 @@ const Header = () => {
               Contáctanos
             </button>
 
+            {/* Botón de búsqueda */}
             <button
-              className="bg-[#00B4D8] text-white p-3 rounded-full shadow-md hover:scale-105 transition w-[46px] h-[46px] flex items-center justify-center"
+              className="bg-[#00B4D8] text-white w-12 h-12 rounded-full shadow-md hover:scale-105 transition flex items-center justify-center"
               onClick={() => setShowSearch(!showSearch)}
             >
               <FaSearch size={20} />
             </button>
 
-            <a
-              href="#cart"
-              className="bg-[#00B4D8] text-white p-3 rounded-full shadow-md hover:scale-105 transition w-[46px] h-[46px] flex items-center justify-center"
+            {/* Carrito funcional */}
+            <Link
+              to="/cart"
+              className="relative bg-[#00B4D8] text-white w-12 h-12 rounded-full shadow-md hover:scale-105 transition flex items-center justify-center"
             >
-              <FaShoppingCart size={20} />
-            </a>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.4 5h13.8M10 21a1 1 0 100-2 1 1 0 000 2zm7 1a1 1 0 100-2 1 1 0 000 2z" />
+              </svg>
+              {cartItems.length > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+                  {cartItems.length}
+                </span>
+              )}
+            </Link>
           </div>
         </div>
       </header>
@@ -104,3 +116,4 @@ const Header = () => {
 };
 
 export default Header;
+
