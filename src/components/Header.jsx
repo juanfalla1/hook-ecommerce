@@ -8,8 +8,8 @@ const Header = () => {
   return (
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-center gap-x-20 max-h-[100px]">
-          {/* Logo */}
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between max-h-[100px]">
+          {/* Logo alineado a la izquierda */}
           <a href="#home" className="flex items-center">
             <img
               src={logoFull}
@@ -18,8 +18,8 @@ const Header = () => {
             />
           </a>
 
-          {/* Navigation */}
-          <nav className="flex space-x-8 text-lg font-medium text-gray-800">
+          {/* Menú centrado */}
+          <nav className="mx-auto flex space-x-8 text-lg font-medium text-gray-800">
             <a href="#home" className="hover:text-[#00B4D8] transition">Inicio</a>
             <a href="#products" className="hover:text-[#00B4D8] transition">Productos</a>
             <a href="#features" className="hover:text-[#00B4D8] transition">Beneficios</a>
@@ -32,6 +32,9 @@ const Header = () => {
               Contáctanos
             </button>
           </nav>
+
+          {/* Espacio a la derecha vacío para mantener centrado el nav */}
+          <div className="w-[100px] md:w-[150px]"></div>
         </div>
       </header>
 
@@ -55,4 +58,3 @@ const Header = () => {
 };
 
 export default Header;
-
