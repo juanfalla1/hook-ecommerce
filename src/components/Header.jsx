@@ -4,12 +4,12 @@ import ContactForm from "./ContactForm";
 
 const Header = () => {
   const [showContactForm, setShowContactForm] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
-        <div className="flex items-center justify-between px-4 py-4 max-h-[100px]">
+        <div className="flex items-center justify-between max-h-[100px] px-4 py-4">
+
           {/* Logo alineado al borde izquierdo */}
           <div className="pl-0">
             <a href="#home" className="flex items-center">
@@ -21,8 +21,8 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Menú de escritorio */}
-          <nav className="hidden md:flex space-x-8 text-lg font-medium text-gray-800">
+          {/* Menú centrado */}
+          <nav className="mx-auto flex space-x-8 text-lg font-medium text-gray-800">
             <a href="#home" className="hover:text-[#00B4D8] transition">Inicio</a>
             <a href="#products" className="hover:text-[#00B4D8] transition">Productos</a>
             <a href="#features" className="hover:text-[#00B4D8] transition">Beneficios</a>
@@ -36,36 +36,9 @@ const Header = () => {
             </button>
           </nav>
 
-          {/* Botón hamburguesa en móvil */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-[#00B4D8] focus:outline-none text-3xl"
-            >
-              ☰
-            </button>
-          </div>
+          {/* Espaciador invisible */}
+          <div className="w-[100px] md:w-[120px]"></div>
         </div>
-
-        {/* Menú móvil desplegable */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden bg-white shadow-md py-4 px-6 text-center space-y-4 absolute top-full left-0 w-full z-40">
-            <a href="#home" className="block text-lg font-medium text-gray-800 hover:text-[#00B4D8] transition" onClick={() => setIsMobileMenuOpen(false)}>Inicio</a>
-            <a href="#products" className="block text-lg font-medium text-gray-800 hover:text-[#00B4D8] transition" onClick={() => setIsMobileMenuOpen(false)}>Productos</a>
-            <a href="#features" className="block text-lg font-medium text-gray-800 hover:text-[#00B4D8] transition" onClick={() => setIsMobileMenuOpen(false)}>Beneficios</a>
-            <a href="#about" className="block text-lg font-medium text-gray-800 hover:text-[#00B4D8] transition" onClick={() => setIsMobileMenuOpen(false)}>Nosotros</a>
-            <a href="#testimonials" className="block text-lg font-medium text-gray-800 hover:text-[#00B4D8] transition" onClick={() => setIsMobileMenuOpen(false)}>Testimonios</a>
-            <button
-              onClick={() => {
-                setShowContactForm(true);
-                setIsMobileMenuOpen(false);
-              }}
-              className="block text-lg font-medium text-gray-800 hover:text-[#00B4D8] transition"
-            >
-              Contáctanos
-            </button>
-          </div>
-        )}
       </header>
 
       {/* Modal de contacto */}
@@ -88,4 +61,3 @@ const Header = () => {
 };
 
 export default Header;
-
