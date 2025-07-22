@@ -20,7 +20,7 @@ const Header = () => {
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between max-h-[100px]">
-          {/* Logo */}
+          {/* LOGO */}
           <a href="#home" className="flex items-center">
             <img
               src={logoFull}
@@ -29,7 +29,7 @@ const Header = () => {
             />
           </a>
 
-          {/* Navigation */}
+          {/* NAV */}
           <nav className="hidden md:flex space-x-8 text-lg font-medium text-gray-800">
             <a href="#home" className="hover:text-[#00B4D8] transition">Inicio</a>
             <a href="#products" className="hover:text-[#00B4D8] transition">Productos</a>
@@ -38,9 +38,9 @@ const Header = () => {
             <a href="#testimonials" className="hover:text-[#00B4D8] transition">Testimonios</a>
           </nav>
 
-          {/* Right Buttons */}
+          {/* BOTONES DERECHA */}
           <div className="flex items-center gap-3">
-            {/* Contact Button */}
+            {/* Botón de contacto */}
             <button
               onClick={() => setShowContactForm(true)}
               className="bg-[#00B4D8] text-white px-5 py-2 rounded-full shadow-md text-sm hover:bg-[#019abd] transition hidden md:block"
@@ -48,7 +48,7 @@ const Header = () => {
               Contáctanos
             </button>
 
-            {/* Search Button */}
+            {/* Botón de búsqueda */}
             <button
               onClick={() => setShowSearch(!showSearch)}
               className="bg-[#00B4D8] text-white w-12 h-12 rounded-full shadow-md hover:scale-105 transition flex items-center justify-center"
@@ -56,7 +56,7 @@ const Header = () => {
               <FaSearch size={20} />
             </button>
 
-            {/* ✅ ÚNICO CARRITO FUNCIONAL */}
+            {/* ✅ ÚNICO carrito funcional */}
             <Link
               to="/cart"
               className="relative bg-[#00B4D8] text-white w-12 h-12 rounded-full shadow-md hover:scale-105 transition flex items-center justify-center"
@@ -74,7 +74,7 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Search Bar */}
+      {/* BARRA DE BÚSQUEDA FLOTANTE */}
       {showSearch && (
         <div className="fixed top-[100px] right-6 z-50 bg-white shadow-lg border rounded-lg px-4 py-3 w-80">
           <form onSubmit={handleSearchSubmit} className="flex gap-2">
@@ -96,7 +96,7 @@ const Header = () => {
         </div>
       )}
 
-      {/* Contact Form Modal */}
+      {/* MODAL FORMULARIO DE CONTACTO */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center px-4">
           <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
