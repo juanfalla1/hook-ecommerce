@@ -1,20 +1,9 @@
 import React, { useState } from "react";
-import { FaSearch } from "react-icons/fa";
 import logoFull from "../assets/logo-full.png";
 import ContactForm from "./ContactForm";
-import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext";
 
 const Header = () => {
-  const [showSearch, setShowSearch] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
   const [showContactForm, setShowContactForm] = useState(false);
-  const { cartItems } = useCart();
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    console.log("Buscando:", searchQuery);
-  };
 
   return (
     <>
@@ -47,56 +36,8 @@ const Header = () => {
               Contáctanos
             </a>
           </nav>
-
-          {/* Right Buttons */}
-          <div className="flex items-center gap-3">
-            {/* Search Button */}
-            <button
-              onClick={() => setShowSearch(!showSearch)}
-              className="bg-[#00B4D8] text-white w-12 h-12 rounded-full shadow-md hover:scale-105 transition flex items-center justify-center"
-            >
-              <FaSearch size={20} />
-            </button>
-
-            {/* Cart Button (único) */}
-            <Link
-              to="/cart"
-              className="relative bg-[#00B4D8] text-white w-12 h-12 rounded-full shadow-md hover:scale-105 transition flex items-center justify-center"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.4 5h13.8M10 21a1 1 0 100-2 1 1 0 000 2zm7 1a1 1 0 100-2 1 1 0 000 2z" />
-              </svg>
-              {cartItems.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
-                  {cartItems.length}
-                </span>
-              )}
-            </Link>
-          </div>
         </div>
       </header>
-
-      {/* Floating Search Bar */}
-      {showSearch && (
-        <div className="fixed top-[100px] right-6 z-50 bg-white shadow-lg border rounded-lg px-4 py-3 w-80">
-          <form onSubmit={handleSearchSubmit} className="flex gap-2">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Buscar productos..."
-              className="flex-1 border border-gray-300 rounded px-3 py-2 text-sm"
-              autoFocus
-            />
-            <button
-              type="submit"
-              className="bg-[#00B4D8] text-white px-3 py-2 rounded text-sm hover:bg-[#019abd] transition"
-            >
-              Buscar
-            </button>
-          </form>
-        </div>
-      )}
 
       {/* Contact Modal */}
       {showContactForm && (
