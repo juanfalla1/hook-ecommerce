@@ -18,20 +18,20 @@
     "button_secondary": "Learn More"
   },
   "features": {
-    "title": "Why Choose HOOK?",
+    "title": "Why choose HOOK?",
     "subtitle": "Our footwear is designed to offer maximum protection without sacrificing style or comfort.",
     "items": [
       {
         "title": "Superior Safety",
-        "description": "Steel toe cap and durable materials to protect you in any environment."
+        "description": "Steel toe and resistant materials to protect you in any environment."
       },
       {
         "title": "All-Day Comfort",
-        "description": "Ergonomic design with cushioned support for long workdays."
+        "description": "Ergonomic design with padded support for long workdays."
       },
       {
         "title": "Modern Style",
-        "description": "Footwear that blends functionality with a sleek and contemporary design."
+        "description": "Footwear that blends functionality with a sleek, contemporary design."
       }
     ]
   }
