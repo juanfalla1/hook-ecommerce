@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import logoFull from "../assets/logo-full.png";
 import ContactForm from "./ContactForm";
 
@@ -22,7 +23,7 @@ const Header = () => {
             <img
               src={logoFull}
               alt="HOOK Logo"
-              className="h-[110px] w-auto object-contain" // ← restaurado
+              className="h-auto max-h-[100px] w-auto object-contain"
             />
           </a>
 
@@ -37,21 +38,26 @@ const Header = () => {
 
           {/* BOTONES DERECHA */}
           <div className="flex items-center gap-3">
-            {/* Botón búsqueda */}
-            <button
-              onClick={() => setShowSearch(!showSearch)}
-              className="bg-[#00B4D8] text-white w-[44px] h-[44px] rounded-full shadow-md hover:scale-105 transition flex items-center justify-center"
-            >
-              <FaSearch size={18} />
-            </button>
-
-            {/* Botón contáctanos */}
             <button
               onClick={() => setShowContactForm(true)}
-              className="bg-[#00B4D8] text-white px-5 py-2 rounded-full shadow-md text-sm hover:bg-[#019abd] transition hidden md:inline-flex items-center"
+              className="bg-[#00B4D8] text-white px-5 py-2 rounded-full shadow-md text-sm hover:bg-[#019abd] transition hidden md:block"
             >
               Contáctanos
             </button>
+
+            <button
+              className="bg-[#00B4D8] text-white p-3 rounded-full shadow-md hover:scale-105 transition w-[46px] h-[46px] flex items-center justify-center"
+              onClick={() => setShowSearch(!showSearch)}
+            >
+              <FaSearch size={20} />
+            </button>
+
+            <a
+              href="#cart"
+              className="bg-[#00B4D8] text-white p-3 rounded-full shadow-md hover:scale-105 transition w-[46px] h-[46px] flex items-center justify-center"
+            >
+              <FaShoppingCart size={20} />
+            </a>
           </div>
         </div>
       </header>
@@ -98,4 +104,3 @@ const Header = () => {
 };
 
 export default Header;
-
