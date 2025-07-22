@@ -2,19 +2,22 @@ import React, { useState } from "react";
 import logoFull from "../assets/logo-full.png";
 import ContactForm from "./ContactForm";
 import { useTranslation } from "react-i18next";
+import i18n from "../i18n";
 
 const Header = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const { t } = useTranslation();
 
+  const handleLanguageChange = (e) => {
+    i18n.changeLanguage(e.target.value);
+  };
+
   return (
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
-        {/* Contenedor general */}
         <div className="flex items-center justify-between max-h-[100px] px-4 py-4">
-
-          {/* Logo alineado a la izquierda */}
+          {/* Logo y hamburguesa */}
           <div className="pl-0 flex items-center">
             <a href="#home" className="flex items-center">
               <img
@@ -24,7 +27,7 @@ const Header = () => {
               />
             </a>
 
-            {/* Hamburguesa SOLO visible en móviles */}
+            {/* Botón de hamburguesa - SOLO móviles */}
             <button
               className="ml-4 text-3xl text-[#00B4D8] md:hidden"
               onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -33,34 +36,46 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Menú principal - SOLO en escritorio */}
+          {/* Menú en escritorio */}
           <nav className="hidden md:flex space-x-8 text-lg font-medium text-gray-800">
-            <a href="#home" className="hover:text-[#00B4D8] transition">Inicio</a>
-            <a href="#products" className="hover:text-[#00B4D8] transition">Productos</a>
-            <a href="#features" className="hover:text-[#00B4D8] transition">Beneficios</a>
-            <a href="#about" className="hover:text-[#00B4D8] transition">Nosotros</a>
-            <a href="#testimonials" className="hover:text-[#00B4D8] transition">Testimonios</a>
+            <a href="#home" className="hover:text-[#00B4D8] transition">{t("menu.home")}</a>
+            <a href="#products" className="hover:text-[#00B4D8] transition">{t("menu.products")}</a>
+            <a href="#features" className="hover:text-[#00B4D8] transition">{t("menu.benefits")}</a>
+            <a href="#about" className="hover:text-[#00B4D8] transition">{t("menu.about")}</a>
+            <a href="#testimonials" className="hover:text-[#00B4D8] transition">{t("menu.testimonials")}</a>
             <button
               onClick={() => setShowContactForm(true)}
               className="hover:text-[#00B4D8] transition"
             >
-              Contáctanos
+              {t("menu.contact")}
             </button>
           </nav>
 
-          {/* Espaciador invisible - sin tocar */}
+          {/* Selector de idioma SOLO en escritorio */}
+          <div className="hidden md:block">
+            <select
+              onChange={handleLanguageChange}
+              defaultValue={i18n.language}
+              className="border rounded px-2 py-1 text-sm text-[#023048]"
+            >
+              <option value="es">ES</option>
+              <option value="en">EN</option>
+            </select>
+          </div>
+
+          {/* Espaciador */}
           <div className="w-[100px] md:w-[120px]"></div>
         </div>
       </header>
 
-      {/* Menú desplegable móvil */}
+      {/* Menú móvil */}
       {showMobileMenu && (
         <div className="md:hidden bg-white shadow-lg px-4 pb-4 pt-2 space-y-3 mt-[70px]">
-          <a href="#home" className="block text-[#023048]">Inicio</a>
-          <a href="#products" className="block text-[#023048]">Productos</a>
-          <a href="#features" className="block text-[#023048]">Beneficios</a>
-          <a href="#about" className="block text-[#023048]">Nosotros</a>
-          <a href="#testimonials" className="block text-[#023048]">Testimonios</a>
+          <a href="#home" className="block text-[#023048]">{t("menu.home")}</a>
+          <a href="#products" className="block text-[#023048]">{t("menu.products")}</a>
+          <a href="#features" className="block text-[#023048]">{t("menu.benefits")}</a>
+          <a href="#about" className="block text-[#023048]">{t("menu.about")}</a>
+          <a href="#testimonials" className="block text-[#023048]">{t("menu.testimonials")}</a>
           <button
             onClick={() => {
               setShowContactForm(true);
@@ -68,8 +83,20 @@ const Header = () => {
             }}
             className="block text-[#023048]"
           >
-            Contáctanos
+            {t("menu.contact")}
           </button>
+
+          {/* Selector de idioma en móvil */}
+          <div className="pt-2">
+            <select
+              onChange={handleLanguageChange}
+              defaultValue={i18n.language}
+              className="border rounded px-2 py-1 text-sm text-[#023048] w-full"
+            >
+              <option value="es">Español</option>
+              <option value="en">English</option>
+            </select>
+          </div>
         </div>
       )}
 
@@ -83,13 +110,15 @@ const Header = () => {
             >
               ×
             </button>
-            <h2 className="text-2xl font-bold mb-4 text-center text-[#023048]">Contáctanos</h2>
+            <h2 className="text-2xl font-bold mb-4 text-center text-[#023048]">
+              {t("menu.contact")}
+            </h2>
             <ContactForm />
           </div>
         </div>
       )}
 
-      {/* ✅ Carrito solo visible en móviles arriba derecha */}
+      {/* Carrito solo visible en móviles */}
       <div className="fixed top-5 right-5 z-40 md:hidden">
         <button className="bg-[#00B4D8] text-white p-3 rounded-full shadow-lg hover:bg-[#1FB4D8]">
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
@@ -102,3 +131,4 @@ const Header = () => {
 };
 
 export default Header;
+
