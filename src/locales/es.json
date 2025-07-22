@@ -74,5 +74,35 @@
         "position": "Operador Logístico"
       }
     ]
+  },
+  "contactForm": {
+    "title": "Contáctanos",
+    "name": "Tu nombre",
+    "email": "Tu correo",
+    "message": "Tu mensaje",
+    "submit": "Enviar mensaje",
+    "openForm": "Contáctanos",
+    "closeForm": "Cerrar formulario",
+    "errors": {
+      "nombre": "Nombre requerido",
+      "emailRequired": "Correo requerido",
+      "emailInvalid": "Correo inválido",
+      "mensaje": "Mensaje requerido"
+    },
+    "successMessage": "¡Mensaje enviado correctamente!",
+    "errorSending": "Error al enviar el mensaje",
+    "connectionError": "Error de conexión"
+  },
+  "footer": {
+    "aboutTitle": "Sobre Nosotros",
+    "aboutDescription": "HOOK es una marca dedicada a ofrecer calzado industrial de alta calidad, diseñado para profesionales que buscan seguridad y estilo.",
+    "linksTitle": "Enlaces Rápidos",
+    "contactTitle": "Contacto",
+    "contactEmail": "Email: contacto@grouphook.com",
+    "contactPhone": "Teléfono: +52 123 456 7890",
+    "contactAddress": "Dirección: Av. Industrial 123, CDMX, México",
+    "copy": "© 2025 HOOK Calzado Industrial. Todos los derechos reservados."
   }
 }
+
+
