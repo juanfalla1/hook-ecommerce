@@ -9,26 +9,38 @@ import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import ChatBotButton from "./components/ChatBotButton";
-import Cart from "./components/Cart"; // ✅ Carrito funcional
+import Cart from "./components/Cart"; // ✅ Nuevo componente
 import ContactForm from "./components/ContactForm";
-import { CartProvider } from "./context/CartContext"; // ✅ Contexto del carrito
+
 
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (product) => {
+    setCartItems([...cartItems, product]);
+  };
+
+  const removeFromCart = (index) => {
+    const updatedCart = [...cartItems];
+    updatedCart.splice(index, 1);
+    setCartItems(updatedCart);
+  };
+
   return (
-    <CartProvider>
+    <>
       <LoadingScreen />
       <Header />
       <Hero />
       <Features />
-      <ProductList />
+      <ProductList addToCart={addToCart} /> {/* ✅ Prop agregada */}
       <About />
       <Testimonials />
       <CTA />
       <ContactForm />
       <Footer />
       <ChatBotButton />
-      <Cart />
-    </CartProvider>
+      <Cart cartItems={cartItems} removeFromCart={removeFromCart} /> {/* ✅ Carrito */}
+    </>
   );
 }
 
