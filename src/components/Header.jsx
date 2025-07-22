@@ -35,16 +35,16 @@ const Header = () => {
 
           {/* Menú principal - SOLO en escritorio */}
           <nav className="hidden md:flex space-x-8 text-lg font-medium text-gray-800">
-            <a href="#home" className="hover:text-[#00B4D8] transition">{t("menu.home")}</a>
-            <a href="#products" className="hover:text-[#00B4D8] transition">{t("menu.products")}</a>
-            <a href="#features" className="hover:text-[#00B4D8] transition">{t("menu.benefits")}</a>
-            <a href="#about" className="hover:text-[#00B4D8] transition">{t("menu.about")}</a>
-            <a href="#testimonials" className="hover:text-[#00B4D8] transition">{t("menu.testimonials")}</a>
+            <a href="#home" className="hover:text-[#00B4D8] transition">Inicio</a>
+            <a href="#products" className="hover:text-[#00B4D8] transition">Productos</a>
+            <a href="#features" className="hover:text-[#00B4D8] transition">Beneficios</a>
+            <a href="#about" className="hover:text-[#00B4D8] transition">Nosotros</a>
+            <a href="#testimonials" className="hover:text-[#00B4D8] transition">Testimonios</a>
             <button
               onClick={() => setShowContactForm(true)}
               className="hover:text-[#00B4D8] transition"
             >
-              {t("menu.contact")}
+              Contáctanos
             </button>
           </nav>
 
@@ -56,11 +56,11 @@ const Header = () => {
       {/* Menú desplegable móvil */}
       {showMobileMenu && (
         <div className="md:hidden bg-white shadow-lg px-4 pb-4 pt-2 space-y-3 mt-[70px]">
-          <a href="#home" className="block text-[#023048]">{t("menu.home")}</a>
-          <a href="#products" className="block text-[#023048]">{t("menu.products")}</a>
-          <a href="#features" className="block text-[#023048]">{t("menu.benefits")}</a>
-          <a href="#about" className="block text-[#023048]">{t("menu.about")}</a>
-          <a href="#testimonials" className="block text-[#023048]">{t("menu.testimonials")}</a>
+          <a href="#home" className="block text-[#023048]">Inicio</a>
+          <a href="#products" className="block text-[#023048]">Productos</a>
+          <a href="#features" className="block text-[#023048]">Beneficios</a>
+          <a href="#about" className="block text-[#023048]">Nosotros</a>
+          <a href="#testimonials" className="block text-[#023048]">Testimonios</a>
           <button
             onClick={() => {
               setShowContactForm(true);
@@ -68,7 +68,7 @@ const Header = () => {
             }}
             className="block text-[#023048]"
           >
-            {t("menu.contact")}
+            Contáctanos
           </button>
         </div>
       )}
@@ -83,7 +83,7 @@ const Header = () => {
             >
               ×
             </button>
-            <h2 className="text-2xl font-bold mb-4 text-center text-[#023048]">{t("menu.contact")}</h2>
+            <h2 className="text-2xl font-bold mb-4 text-center text-[#023048]">Contáctanos</h2>
             <ContactForm />
           </div>
         </div>
@@ -102,4 +102,3 @@ const Header = () => {
 };
 
 export default Header;
-
