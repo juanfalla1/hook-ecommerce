@@ -4,12 +4,12 @@ import ContactForm from "./ContactForm";
 
 const Header = () => {
   const [showContactForm, setShowContactForm] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
         <div className="flex items-center justify-between max-h-[100px] px-4 py-4">
-
           {/* Logo alineado al borde izquierdo */}
           <div className="pl-0">
             <a href="#home" className="flex items-center">
@@ -56,6 +56,15 @@ const Header = () => {
           </div>
         </div>
       )}
+
+      {/* ✅ Carrito flotante solo en móviles */}
+      <div className="fixed bottom-5 right-5 z-40 md:hidden">
+        <button className="bg-[#00B4D8] text-white p-3 rounded-full shadow-lg hover:bg-[#1FB4D8]">
+          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M16 11V7a4 4 0 10-8 0v4H5l1.293 1.293A1 1 0 006 14h8a1 1 0 00.707-1.707L15 11h1z" />
+          </svg>
+        </button>
+      </div>
     </>
   );
 };
