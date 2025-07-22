@@ -13,6 +13,8 @@
   },
   "hero": {
     "title": "Premium Industrial Footwear",
-    "subtitle": "Discover the perfect combination of safety, comfort, and style with HOOK. Designed for professionals who demand the best."
+    "subtitle": "Discover the perfect combination of safety, comfort, and style with HOOK. Designed for professionals who demand the best.",
+    "button_primary": "Explore Our Collection",
+    "button_secondary": "Learn More"
   }
 }
