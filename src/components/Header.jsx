@@ -4,41 +4,65 @@ import ContactForm from "./ContactForm";
 
 const Header = () => {
   const [showContactForm, setShowContactForm] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
     <>
-      <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
-        <div className="flex items-center justify-between max-h-[100px] px-4 py-4">
+      <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+        <div className="flex items-center justify-between px-4 py-3 md:py-4 max-w-7xl mx-auto">
+          
+          {/* Logo */}
+          <a href="#home" className="flex items-center">
+            <img
+              src={logoFull}
+              alt="HOOK Logo"
+              className="h-10 md:h-[80px] object-contain"
+            />
+          </a>
 
-          {/* Logo alineado al borde izquierdo */}
-          <div className="pl-0">
-            <a href="#home" className="flex items-center">
-              <img
-                src={logoFull}
-                alt="HOOK Logo"
-                className="h-auto max-h-[100px] w-auto object-contain"
-              />
-            </a>
-          </div>
+          {/* Botón hamburguesa móvil */}
+          <button
+            className="md:hidden text-3xl text-[#00B4D8]"
+            onClick={() => setShowMobileMenu(!showMobileMenu)}
+          >
+            ☰
+          </button>
 
-          {/* Menú centrado */}
-          <nav className="mx-auto flex space-x-8 text-lg font-medium text-gray-800">
-            <a href="#home" className="hover:text-[#00B4D8] transition">Inicio</a>
-            <a href="#products" className="hover:text-[#00B4D8] transition">Productos</a>
-            <a href="#features" className="hover:text-[#00B4D8] transition">Beneficios</a>
-            <a href="#about" className="hover:text-[#00B4D8] transition">Nosotros</a>
-            <a href="#testimonials" className="hover:text-[#00B4D8] transition">Testimonios</a>
+          {/* Menú en escritorio */}
+          <nav className="hidden md:flex space-x-8 text-lg font-medium text-gray-800">
+            <a href="#home" className="hover:text-[#00B4D8]">Inicio</a>
+            <a href="#products" className="hover:text-[#00B4D8]">Productos</a>
+            <a href="#features" className="hover:text-[#00B4D8]">Beneficios</a>
+            <a href="#about" className="hover:text-[#00B4D8]">Nosotros</a>
+            <a href="#testimonials" className="hover:text-[#00B4D8]">Testimonios</a>
             <button
               onClick={() => setShowContactForm(true)}
-              className="hover:text-[#00B4D8] transition"
+              className="hover:text-[#00B4D8]"
             >
               Contáctanos
             </button>
           </nav>
-
-          {/* Espaciador invisible */}
-          <div className="w-[100px] md:w-[120px]"></div>
         </div>
+
+        {/* Menú desplegable en móvil */}
+        {showMobileMenu && (
+          <div className="md:hidden bg-white shadow-lg px-4 pb-4 space-y-2">
+            <a href="#home" className="block text-[#023048]">Inicio</a>
+            <a href="#products" className="block text-[#023048]">Productos</a>
+            <a href="#features" className="block text-[#023048]">Beneficios</a>
+            <a href="#about" className="block text-[#023048]">Nosotros</a>
+            <a href="#testimonials" className="block text-[#023048]">Testimonios</a>
+            <button
+              onClick={() => {
+                setShowContactForm(true);
+                setShowMobileMenu(false);
+              }}
+              className="block text-[#023048]"
+            >
+              Contáctanos
+            </button>
+          </div>
+        )}
       </header>
 
       {/* Modal de contacto */}
