@@ -1,45 +1,43 @@
 import React, { useState } from "react";
 
-const ProductCard = ({ product, addToCart }) => {
-  const [selectedImage, setSelectedImage] = useState(product.images[0]);
+const ProductCard = () => {
+  const [mainImage, setMainImage] = useState("/images/producto-principal.png");
+
+  const images = [
+    "/images/producto-principal.png",
+    "/images/producto-lateral.png",
+    "/images/producto-detalle.png",
+  ];
 
   return (
-    <div className="bg-white shadow-lg rounded-2xl overflow-hidden max-w-sm w-full hover:shadow-xl transition duration-300">
-      <div className="relative bg-gray-100 p-6">
+    <div className="max-w-sm mx-auto bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+      <div className="bg-gradient-to-b from-[#e0f7ff] to-white p-4">
         <img
-          src={selectedImage}
-          alt={product.name}
-          className="h-64 w-full object-contain mx-auto transition-all duration-300"
+          src={mainImage}
+          alt="Producto"
+          className="w-full h-64 object-contain transition-transform duration-300 hover:scale-105"
         />
-        <div className="flex justify-center gap-2 mt-4">
-          {product.images.map((img, i) => (
-            <img
-              key={i}
-              src={img}
-              alt={`vista ${i + 1}`}
-              className={`w-12 h-12 rounded-md border cursor-pointer object-cover ${
-                selectedImage === img ? "ring-2 ring-[#00B4D8]" : "border-gray-300"
-              }`}
-              onClick={() => setSelectedImage(img)}
-            />
+        <div className="flex justify-center mt-4 gap-3">
+          {images.map((img, index) => (
+            <button
+              key={index}
+              onClick={() => setMainImage(img)}
+              className={`w-4 h-4 rounded-full border-2 ${
+                mainImage === img ? "bg-[#00B4D8]" : "bg-white border-[#00B4D8]"
+              } hover:bg-[#00B4D8] transition duration-300`}
+              aria-label={`Vista ${index + 1}`}
+            ></button>
           ))}
         </div>
       </div>
-
-      <div className="p-6 text-center">
-        <h3 className="text-xl font-semibold text-[#023048] mb-2">{product.name}</h3>
-        <p className="text-[#00B4D8] font-bold text-lg mb-4">${product.price.toLocaleString("es-CO")} COP</p>
-
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => addToCart(product)}
-            className="bg-[#00B4D8] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#019abd] transition"
-          >
+      <div className="p-5 text-center">
+        <h3 className="text-xl font-semibold text-[#023048]">Calzado Hook Axis</h3>
+        <p className="text-[#00B4D8] text-lg mt-1">$69.400 COP</p>
+        <div className="mt-4 flex justify-center gap-3">
+          <button className="bg-[#00B4D8] hover:bg-[#1FB4D8] text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300">
             AÑADIR AL CARRITO
           </button>
-          <button
-            className="border border-[#00B4D8] text-[#00B4D8] px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#e6faff] transition"
-          >
+          <button className="border border-[#00B4D8] text-[#023048] hover:bg-[#e6faff] font-semibold py-2 px-4 rounded-full transition-colors duration-300">
             Ver Detalles
           </button>
         </div>
