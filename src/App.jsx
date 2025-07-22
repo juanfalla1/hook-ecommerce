@@ -10,8 +10,6 @@ import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import ChatBotButton from "./components/ChatBotButton";
 import Cart from "./components/Cart"; // ✅ Nuevo componente
-import ContactForm from "./components/ContactForm";
-
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -36,7 +34,6 @@ function App() {
       <About />
       <Testimonials />
       <CTA />
-      <ContactForm />
       <Footer />
       <ChatBotButton />
       <Cart cartItems={cartItems} removeFromCart={removeFromCart} /> {/* ✅ Carrito */}
