@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import imageAbout from "../assets/about-clean.png"; // Asegúrate de que exista en src/assets
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className="py-[100px] bg-white">
       <div className="max-w-[1200px] mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
@@ -17,30 +20,29 @@ const About = () => {
         {/* Contenido textual */}
         <div>
           <h3 className="text-[2rem] text-[#023048] font-bold mb-6">
-            Sobre HOOK
+            {t("about.title")}
           </h3>
           <p className="text-[#333] text-[1.1rem] mb-6 leading-relaxed">
-            En HOOK, creemos que el calzado industrial no solo debe proteger, sino también inspirar confianza. Nuestra misión es ofrecer productos de la más alta calidad, combinando tecnología avanzada con diseños modernos.
+            {t("about.description")}
           </p>
 
           {/* Misión y Visión */}
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-[#f3f3f3] p-6 rounded-[10px] border-l-4 border-[#00B4D8] shadow-sm">
               <h4 className="text-[#023048] text-[1.3rem] font-semibold mb-2">
-                Misión
+                {t("about.mission.title")}
               </h4>
               <p className="text-[#333] text-[1rem] leading-relaxed whitespace-pre-line">
-                Proporcionar prendas de alto rendimiento que combinen diseño,
-                comodidad y estatus, elevando la experiencia laboral de los profesionales.
+                {t("about.mission.description")}
               </p>
             </div>
 
             <div className="bg-[#f3f3f3] p-6 rounded-[10px] border-l-4 border-[#00B4D8] shadow-sm">
               <h4 className="text-[#023048] text-[1.3rem] font-semibold mb-2">
-                Visión
+                {t("about.vision.title")}
               </h4>
               <p className="text-[#333] text-[1rem] leading-relaxed whitespace-pre-line">
-                Convertirnos en la marca líder de indumentaria premium para entornos profesionales, promoviendo el bienestar físico y emocional a través del diseño.
+                {t("about.vision.description")}
               </p>
             </div>
           </div>
@@ -48,13 +50,13 @@ const About = () => {
           {/* Valores */}
           <div className="mt-10 bg-[#f8f8f8] p-6 rounded-[10px] border-l-4 border-[#00B4D8] shadow-sm">
             <h4 className="text-[#023048] text-[1.3rem] font-semibold mb-4">
-              Valores
+              {t("about.values.title")}
             </h4>
             <ul className="list-disc list-inside text-[#333] text-[1rem] space-y-1">
-              <li>Excelencia funcional</li>
-              <li>Confort con propósito</li>
-              <li>Empatía con el usuario</li>
-              <li>Diseño con identidad</li>
+              <li>{t("about.values.excellence")}</li>
+              <li>{t("about.values.comfort")}</li>
+              <li>{t("about.values.empathy")}</li>
+              <li>{t("about.values.design")}</li>
             </ul>
           </div>
         </div>
@@ -64,7 +66,5 @@ const About = () => {
 };
 
 export default About;
-
-
 
 

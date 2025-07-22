@@ -34,5 +34,24 @@
         "description": "Footwear that blends functionality with a sleek, contemporary design."
       }
     ]
+  },
+  "about": {
+    "title": "About HOOK",
+    "description": "At HOOK, we believe industrial footwear should not only protect, but also inspire confidence. Our mission is to offer high-quality products, combining advanced technology with modern designs.",
+    "mission": {
+      "title": "Mission",
+      "description": "Provide high-performance apparel that combines design, comfort, and status, enhancing the work experience of professionals."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "Become the leading brand of premium attire for professional environments, promoting physical and emotional well-being through design."
+    },
+    "values": {
+      "title": "Values",
+      "excellence": "Functional excellence",
+      "comfort": "Comfort with purpose",
+      "empathy": "Empathy with the user",
+      "design": "Design with identity"
+    }
   }
 }

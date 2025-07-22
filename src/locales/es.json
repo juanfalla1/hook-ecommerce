@@ -34,5 +34,24 @@
         "description": "Calzado que combina funcionalidad con un diseño elegante y contemporáneo."
       }
     ]
+  },
+  "about": {
+    "title": "Sobre HOOK",
+    "description": "En HOOK, creemos que el calzado industrial no solo debe proteger, sino también inspirar confianza. Nuestra misión es ofrecer productos de la más alta calidad, combinando tecnología avanzada con diseños modernos.",
+    "mission": {
+      "title": "Misión",
+      "description": "Proporcionar prendas de alto rendimiento que combinen diseño, comodidad y estatus, elevando la experiencia laboral de los profesionales."
+    },
+    "vision": {
+      "title": "Visión",
+      "description": "Convertirnos en la marca líder de indumentaria premium para entornos profesionales, promoviendo el bienestar físico y emocional a través del diseño."
+    },
+    "values": {
+      "title": "Valores",
+      "excellence": "Excelencia funcional",
+      "comfort": "Confort con propósito",
+      "empathy": "Empatía con el usuario",
+      "design": "Diseño con identidad"
+    }
   }
 }
