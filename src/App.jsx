@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import LoadingScreen from "./components/LoadingScreen";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -12,24 +12,36 @@ import ChatBotButton from "./components/ChatBotButton";
 import Cart from "./components/Cart"; // ✅ Nuevo componente
 import ContactForm from "./components/ContactForm";
 
+
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (product) => {
+    setCartItems([...cartItems, product]);
+  };
+
+  const removeFromCart = (index) => {
+    const updatedCart = [...cartItems];
+    updatedCart.splice(index, 1);
+    setCartItems(updatedCart);
+  };
+
   return (
     <>
       <LoadingScreen />
       <Header />
       <Hero />
       <Features />
-      <ProductList /> {/* Ya no necesita props */}
+      <ProductList addToCart={addToCart} /> {/* ✅ Prop agregada */}
       <About />
       <Testimonials />
       <CTA />
       <ContactForm />
       <Footer />
       <ChatBotButton />
-      <Cart /> {/* El carrito accede a los items desde el contexto */}
+      <Cart cartItems={cartItems} removeFromCart={removeFromCart} /> {/* ✅ Carrito */}
     </>
   );
 }
 
 export default App;
-
