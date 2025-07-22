@@ -5,100 +5,105 @@
     "benefits": "Benefits",
     "about": "About Us",
     "testimonials": "Testimonials",
-    "contact": "Contact"
+    "contact": "Contact Us"
   },
   "cta": {
-    "explore": "EXPLORE OUR COLLECTION",
-    "learn": "LEARN MORE"
+    "title": "Join the Industrial Footwear Revolution",
+    "description": "Discover why HOOK is the choice of professionals. Explore our collection and find the perfect footwear for you.",
+    "button": "Buy Now"
   },
   "hero": {
     "title": "Premium Industrial Footwear",
-    "subtitle": "Discover the perfect combination of safety, comfort, and style with HOOK. Designed for professionals who don’t compromise on quality.",
+    "subtitle": "Discover the perfect combination of safety, comfort, and style with HOOK. Designed for professionals who demand the best.",
     "button_primary": "Explore Our Collection",
     "button_secondary": "Learn More"
   },
   "features": {
-    "title": "Why Choose HOOK?",
+    "title": "Why choose HOOK?",
     "subtitle": "Our footwear is designed to offer maximum protection without sacrificing style or comfort.",
     "items": [
       {
         "title": "Superior Safety",
-        "description": "Steel toe and durable materials to protect you in any environment."
+        "description": "Steel toe and resistant materials to protect you in any environment."
       },
       {
         "title": "All-Day Comfort",
-        "description": "Ergonomic design with cushioned support for long workdays."
+        "description": "Ergonomic design with padded support for long workdays."
       },
       {
         "title": "Modern Style",
-        "description": "Footwear that combines functionality with a sleek, contemporary look."
+        "description": "Footwear that blends functionality with a sleek, contemporary design."
       }
     ]
   },
+  "about": {
+    "title": "About HOOK",
+    "description": "At HOOK, we believe industrial footwear should not only protect, but also inspire confidence. Our mission is to offer high-quality products, combining advanced technology with modern designs.",
+    "mission": {
+      "title": "Mission",
+      "description": "Provide high-performance apparel that combines design, comfort, and status, enhancing the work experience of professionals."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "Become the leading brand of premium attire for professional environments, promoting physical and emotional well-being through design."
+    },
+    "values": {
+      "title": "Values",
+      "excellence": "Functional excellence",
+      "comfort": "Comfort with purpose",
+      "empathy": "Empathy with the user",
+      "design": "Design with identity"
+    }
+  },
   "testimonials": {
-    "title": "Hear from those who trust HOOK for their workdays.",
+    "title": "What our customers say",
     "items": [
       {
-        "initials": "JM",
-        "quote": "HOOK Pro boots are the most comfortable I've worn in years. Perfect for long days on the construction site.",
+        "quote": "HOOK Pro boots are the most comfortable I have used in years. Perfect for long days in construction.",
         "name": "Juan Morales",
-        "position": "Construction Worker"
+        "position": "Constructor"
       },
       {
-        "initials": "LC",
         "quote": "The design of HOOK Flex shoes is amazing. I feel safe and stylish at work.",
         "name": "Laura Castro",
         "position": "Industrial Engineer"
       },
       {
-        "initials": "AP",
-        "quote": "HOOK Ultra is durable and lightweight. Ideal for my warehouse job.",
+        "quote": "HOOK Ultra is durable and lightweight. Perfect for my work in warehouses.",
         "name": "Antonio Pérez",
         "position": "Logistics Operator"
       }
     ]
   },
-  "ctaSection": {
-    "title": "Join the Industrial Footwear Revolution",
-    "description": "Discover why HOOK is the choice of professionals. Explore our collection and find the perfect footwear for you.",
-    "button": "Shop Now"
-  },
-  "form": {
-    "open": "Contact Us",
-    "close": "Close Form",
+  "contactForm": {
+    "title": "Contact Us",
     "name": "Your name",
     "email": "Your email",
     "message": "Your message",
-    "name_required": "Name required",
-    "email_required": "Email required",
-    "email_invalid": "Invalid email",
-    "message_required": "Message required",
-    "send": "Send message",
-    "success": "Message sent successfully!",
-    "error": "Error sending message",
-    "connection_error": "Connection error"
+    "submit": "Submit",
+    "openForm": "Contact Us",
+    "closeForm": "Close form",
+    "errors": {
+      "nombre": "Name required",
+      "emailRequired": "Email required",
+      "emailInvalid": "Invalid email",
+      "mensaje": "Message required"
+    },
+    "successMessage": "Message sent successfully!",
+    "errorSending": "Error sending message",
+    "connectionError": "Connection error"
   },
   "footer": {
     "aboutTitle": "About Us",
-    "aboutText": "HOOK is a brand dedicated to providing high-quality industrial footwear, designed for professionals who seek safety and style.",
-    "quickLinks": "Quick Links",
+    "aboutDescription": "HOOK is a brand dedicated to offering high-quality industrial footwear, designed for professionals who seek safety and style.",
+    "linksTitle": "Quick Links",
     "contactTitle": "Contact",
-    "email": "Email: contacto@grouphook.com",
-    "phone": "Phone: +52 123 456 7890",
-    "address": "Address: Av. Industrial 123, CDMX, Mexico",
-    "rights": "© 2025 HOOK Industrial Footwear. All rights reserved."
-  },
-  "productSection": {
-    "title": "Our Products",
-    "description": "Explore our range of industrial footwear designed to meet the highest standards.",
-    "addToCart": "ADD TO CART",
-    "viewDetails": "View Details"
-  },
-  "product": {
-    "name": "Hook Axis Footwear"
+    "contactEmail": "Email: contact@grouphook.com",
+    "contactPhone": "Phone: +52 123 456 7890",
+    "contactAddress": "Address: Av. Industrial 123, CDMX, Mexico",
+    "copy": "© 2025 HOOK Industrial Footwear. All rights reserved."
   }
 }
-
 
 
 
