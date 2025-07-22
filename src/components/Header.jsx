@@ -1,50 +1,33 @@
-import React, { useState } from "react";
-import logo from "../assets/logo.svg"; // Asegúrate de que tu logo esté en esa ruta
-import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
+import React from "react";
+import logo from "../assets/logo-hook.svg";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md px-4 sm:px-8">
+      <div className="max-w-screen-xl mx-auto flex items-center justify-between h-20">
         {/* Logo */}
-        <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-10 w-auto mr-2" />
+        <div className="flex-shrink-0">
+          <a href="#home">
+            <img src={logo} alt="HOOK Logo" className="h-12" />
+          </a>
         </div>
 
-        {/* Menu toggle (mobile) */}
-        <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-[#00B4D8] text-2xl">
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
-
-        {/* Navigation links */}
-        <nav
-          className={`${
-            isOpen ? "block" : "hidden"
-          } absolute md:static top-[70px] left-0 w-full md:w-auto bg-white md:bg-transparent md:flex md:items-center md:space-x-6 transition-all duration-300 ease-in-out`}
-        >
-          <ul className="flex flex-col md:flex-row items-center md:space-x-6 p-4 md:p-0">
-            <li><a href="#home" className="text-[#002132] hover:text-[#00B4D8]">Inicio</a></li>
-            <li><a href="#products" className="text-[#002132] hover:text-[#00B4D8]">Productos</a></li>
-            <li><a href="#features" className="text-[#002132] hover:text-[#00B4D8]">Beneficios</a></li>
-            <li><a href="#about" className="text-[#002132] hover:text-[#00B4D8]">Nosotros</a></li>
-            <li><a href="#testimonials" className="text-[#002132] hover:text-[#00B4D8]">Testimonios</a></li>
-            <li><a href="#contact" className="text-[#002132] hover:text-[#00B4D8]">Contáctanos</a></li>
-          </ul>
+        {/* Menú de navegación */}
+        <nav className="hidden md:flex space-x-8 text-[#023048] font-semibold text-lg">
+          <a href="#home" className="hover:text-[#00B4D8] transition">Inicio</a>
+          <a href="#products" className="hover:text-[#00B4D8] transition">Productos</a>
+          <a href="#benefits" className="hover:text-[#00B4D8] transition">Beneficios</a>
+          <a href="#about" className="hover:text-[#00B4D8] transition">Nosotros</a>
+          <a href="#testimonials" className="hover:text-[#00B4D8] transition">Testimonios</a>
+          <a href="#contact" className="hover:text-[#00B4D8] transition">Contáctanos</a>
         </nav>
 
-        {/* Cart icon */}
-        <div className="hidden md:flex items-center">
-          <a href="#cart" className="bg-[#00B4D8] text-white p-3 rounded-full shadow-lg">
-            <FaShoppingCart size={18} />
-          </a>
+        {/* Carrito flotante */}
+        <div className="fixed top-4 right-4 md:static md:flex-shrink-0">
+          <button className="bg-[#00B4D8] text-white p-3 rounded-full shadow-lg hover:bg-[#1FB4D8] transition">
+            <FaShoppingCart size={20} />
+          </button>
         </div>
       </div>
     </header>
@@ -52,4 +35,5 @@ const Header = () => {
 };
 
 export default Header;
+
 
