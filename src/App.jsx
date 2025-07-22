@@ -9,8 +9,9 @@ import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import ChatBotButton from "./components/ChatBotButton";
+import Cart from "./components/Cart"; // ✅ Nuevo componente
 import ContactForm from "./components/ContactForm";
-// ❌ Cart eliminado de aquí
+
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -31,17 +32,16 @@ function App() {
       <Header />
       <Hero />
       <Features />
-      <ProductList addToCart={addToCart} />
+      <ProductList addToCart={addToCart} /> {/* ✅ Prop agregada */}
       <About />
       <Testimonials />
       <CTA />
       <ContactForm />
       <Footer />
       <ChatBotButton />
-      {/* ❌ No renderices aquí <Cart /> directamente */}
+      <Cart cartItems={cartItems} removeFromCart={removeFromCart} /> {/* ✅ Carrito */}
     </>
   );
 }
 
 export default App;
-
