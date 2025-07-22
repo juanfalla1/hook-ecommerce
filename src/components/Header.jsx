@@ -56,7 +56,7 @@ const Header = () => {
               <FaSearch size={20} />
             </button>
 
-            {/* Cart Button (only one) */}
+            {/* ✅ ÚNICO CARRITO FUNCIONAL */}
             <Link
               to="/cart"
               className="relative bg-[#00B4D8] text-white w-12 h-12 rounded-full shadow-md hover:scale-105 transition flex items-center justify-center"
@@ -74,7 +74,7 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Floating Search Bar */}
+      {/* Search Bar */}
       {showSearch && (
         <div className="fixed top-[100px] right-6 z-50 bg-white shadow-lg border rounded-lg px-4 py-3 w-80">
           <form onSubmit={handleSearchSubmit} className="flex gap-2">
@@ -96,7 +96,7 @@ const Header = () => {
         </div>
       )}
 
-      {/* Contact Modal */}
+      {/* Contact Form Modal */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center px-4">
           <div className="bg-white rounded-lg shadow-lg max-w-lg w-full p-6 relative">
