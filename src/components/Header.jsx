@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between max-h-[100px]">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-center gap-x-20 max-h-[100px]">
           {/* Logo */}
           <a href="#home" className="flex items-center">
             <img
@@ -19,22 +19,18 @@ const Header = () => {
           </a>
 
           {/* Navigation */}
-          <nav className="hidden md:flex space-x-8 text-lg font-medium text-gray-800 items-center">
+          <nav className="flex space-x-8 text-lg font-medium text-gray-800">
             <a href="#home" className="hover:text-[#00B4D8] transition">Inicio</a>
             <a href="#products" className="hover:text-[#00B4D8] transition">Productos</a>
             <a href="#features" className="hover:text-[#00B4D8] transition">Beneficios</a>
             <a href="#about" className="hover:text-[#00B4D8] transition">Nosotros</a>
             <a href="#testimonials" className="hover:text-[#00B4D8] transition">Testimonios</a>
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                setShowContactForm(true);
-              }}
+            <button
+              onClick={() => setShowContactForm(true)}
               className="hover:text-[#00B4D8] transition"
             >
               Contáctanos
-            </a>
+            </button>
           </nav>
         </div>
       </header>
@@ -59,3 +55,4 @@ const Header = () => {
 };
 
 export default Header;
+
