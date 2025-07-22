@@ -9,14 +9,17 @@ const Header = () => {
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between max-h-[100px]">
-          {/* Logo alineado a la izquierda */}
-          <a href="#home" className="flex items-center">
-            <img
-              src={logoFull}
-              alt="HOOK Logo"
-              className="h-auto max-h-[100px] w-auto object-contain"
-            />
-          </a>
+          
+          {/* Logo alineado más a la izquierda */}
+          <div className="flex-shrink-0 mr-auto">
+            <a href="#home" className="flex items-center">
+              <img
+                src={logoFull}
+                alt="HOOK Logo"
+                className="h-auto max-h-[100px] w-auto object-contain"
+              />
+            </a>
+          </div>
 
           {/* Menú centrado */}
           <nav className="mx-auto flex space-x-8 text-lg font-medium text-gray-800">
@@ -33,8 +36,8 @@ const Header = () => {
             </button>
           </nav>
 
-          {/* Espacio a la derecha vacío para mantener centrado el nav */}
-          <div className="w-[100px] md:w-[150px]"></div>
+          {/* Espaciador para mantener centrado el nav */}
+          <div className="w-[80px] md:w-[120px]"></div>
         </div>
       </header>
 
