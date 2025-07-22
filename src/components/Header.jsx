@@ -9,9 +9,11 @@ const Header = () => {
   return (
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
+        {/* Contenedor general */}
         <div className="flex items-center justify-between max-h-[100px] px-4 py-4">
-          {/* Logo alineado al borde izquierdo */}
-          <div className="pl-0">
+
+          {/* Logo alineado a la izquierda */}
+          <div className="pl-0 flex items-center">
             <a href="#home" className="flex items-center">
               <img
                 src={logoFull}
@@ -19,10 +21,18 @@ const Header = () => {
                 className="h-auto max-h-[100px] w-auto object-contain"
               />
             </a>
+
+            {/* Hamburguesa SOLO visible en móviles */}
+            <button
+              className="ml-4 text-3xl text-[#00B4D8] md:hidden"
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+            >
+              ☰
+            </button>
           </div>
 
-          {/* Menú centrado */}
-          <nav className="mx-auto flex space-x-8 text-lg font-medium text-gray-800">
+          {/* Menú principal - SOLO en escritorio */}
+          <nav className="hidden md:flex space-x-8 text-lg font-medium text-gray-800">
             <a href="#home" className="hover:text-[#00B4D8] transition">Inicio</a>
             <a href="#products" className="hover:text-[#00B4D8] transition">Productos</a>
             <a href="#features" className="hover:text-[#00B4D8] transition">Beneficios</a>
@@ -36,10 +46,30 @@ const Header = () => {
             </button>
           </nav>
 
-          {/* Espaciador invisible */}
+          {/* Espaciador invisible - sin tocar */}
           <div className="w-[100px] md:w-[120px]"></div>
         </div>
       </header>
+
+      {/* Menú desplegable móvil */}
+      {showMobileMenu && (
+        <div className="md:hidden bg-white shadow-lg px-4 pb-4 pt-2 space-y-3 mt-[70px]">
+          <a href="#home" className="block text-[#023048]">Inicio</a>
+          <a href="#products" className="block text-[#023048]">Productos</a>
+          <a href="#features" className="block text-[#023048]">Beneficios</a>
+          <a href="#about" className="block text-[#023048]">Nosotros</a>
+          <a href="#testimonials" className="block text-[#023048]">Testimonios</a>
+          <button
+            onClick={() => {
+              setShowContactForm(true);
+              setShowMobileMenu(false);
+            }}
+            className="block text-[#023048]"
+          >
+            Contáctanos
+          </button>
+        </div>
+      )}
 
       {/* Modal de contacto */}
       {showContactForm && (
@@ -57,8 +87,8 @@ const Header = () => {
         </div>
       )}
 
-      {/* ✅ Carrito flotante solo en móviles */}
-      <div className="fixed bottom-5 right-5 z-40 md:hidden">
+      {/* ✅ Carrito solo visible en móviles arriba derecha */}
+      <div className="fixed top-5 right-5 z-40 md:hidden">
         <button className="bg-[#00B4D8] text-white p-3 rounded-full shadow-lg hover:bg-[#1FB4D8]">
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
             <path d="M16 11V7a4 4 0 10-8 0v4H5l1.293 1.293A1 1 0 006 14h8a1 1 0 00.707-1.707L15 11h1z" />
