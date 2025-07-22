@@ -4,34 +4,25 @@ import ContactForm from "./ContactForm";
 
 const Header = () => {
   const [showContactForm, setShowContactForm] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   return (
     <>
       <header className="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all">
-        <div className="flex items-center justify-between max-w-[1200px] mx-auto px-4 py-3">
-          {/* Logo */}
-          <a href="#home" className="flex items-center">
-            <img
-              src={logoFull}
-              alt="HOOK Logo"
-              className="h-auto max-h-[60px] w-auto object-contain"
-            />
-          </a>
+        <div className="flex items-center justify-between max-h-[100px] px-4 py-4">
 
-          {/* Botón de menú hamburguesa solo en móviles */}
-          <button
-            className="text-[#00B4D8] text-3xl md:hidden focus:outline-none"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            ☰
-          </button>
+          {/* Logo alineado al borde izquierdo */}
+          <div className="pl-0">
+            <a href="#home" className="flex items-center">
+              <img
+                src={logoFull}
+                alt="HOOK Logo"
+                className="h-auto max-h-[100px] w-auto object-contain"
+              />
+            </a>
+          </div>
 
-          {/* Menú principal - oculto en móviles */}
-          <nav className="hidden md:flex space-x-8 text-lg font-medium text-[#023048]">
+          {/* Menú centrado */}
+          <nav className="mx-auto flex space-x-8 text-lg font-medium text-gray-800">
             <a href="#home" className="hover:text-[#00B4D8] transition">Inicio</a>
             <a href="#products" className="hover:text-[#00B4D8] transition">Productos</a>
             <a href="#features" className="hover:text-[#00B4D8] transition">Beneficios</a>
@@ -44,28 +35,10 @@ const Header = () => {
               Contáctanos
             </button>
           </nav>
-        </div>
 
-        {/* Menú móvil desplegable */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden px-4 pb-4">
-            <nav className="flex flex-col space-y-3 text-[#023048] text-lg font-medium">
-              <a href="#home" onClick={toggleMenu}>Inicio</a>
-              <a href="#products" onClick={toggleMenu}>Productos</a>
-              <a href="#features" onClick={toggleMenu}>Beneficios</a>
-              <a href="#about" onClick={toggleMenu}>Nosotros</a>
-              <a href="#testimonials" onClick={toggleMenu}>Testimonios</a>
-              <button
-                onClick={() => {
-                  toggleMenu();
-                  setShowContactForm(true);
-                }}
-              >
-                Contáctanos
-              </button>
-            </nav>
-          </div>
-        )}
+          {/* Espaciador invisible */}
+          <div className="w-[100px] md:w-[120px]"></div>
+        </div>
       </header>
 
       {/* Modal de contacto */}
@@ -78,9 +51,7 @@ const Header = () => {
             >
               ×
             </button>
-            <h2 className="text-2xl font-bold mb-4 text-center text-[#023048]">
-              Contáctanos
-            </h2>
+            <h2 className="text-2xl font-bold mb-4 text-center text-[#023048]">Contáctanos</h2>
             <ContactForm />
           </div>
         </div>
@@ -90,4 +61,3 @@ const Header = () => {
 };
 
 export default Header;
-
