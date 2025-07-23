@@ -1,21 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import imageAbout from "../assets/about-clean.png";
+import imageAbout from "../assets/about-clean.png"; // Asegúrate de que exista en src/assets
 
 const About = () => {
-  const { t, i18n } = useTranslation();
-
-  // 👉 Forzar recarga de recursos cuando cambia el idioma
-  useEffect(() => {
-    i18n.reloadResources(i18n.language);
-    console.log("Idioma actual:", i18n.language); // Para depurar
-  }, [i18n.language]);
+  const { t } = useTranslation();
 
   return (
     <section id="about" className="py-[100px] bg-white">
       <div className="max-w-[1200px] mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-
-        {/* Imagen */}
+        {/* Imagen centrada y ajustada */}
         <div className="w-full h-[400px] flex justify-center items-center">
           <img
             src={imageAbout}
@@ -24,12 +17,11 @@ const About = () => {
           />
         </div>
 
-        {/* Texto */}
+        {/* Contenido textual */}
         <div>
           <h3 className="text-[2rem] text-[#023048] font-bold mb-6">
             {t("about.title")}
           </h3>
-
           <p className="text-[#333] text-[1.1rem] mb-6 leading-relaxed">
             {t("about.description")}
           </p>
