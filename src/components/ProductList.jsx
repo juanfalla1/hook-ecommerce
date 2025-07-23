@@ -1,15 +1,17 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next"; // ✅ Importante
 import axis1 from "../assets/axis1.jpg";
 import axis2 from "../assets/axis2.jpg";
 import axis3 from "../assets/axis3.jpg";
 
 const ProductList = ({ addToCart }) => {
   const [activeImage, setActiveImage] = useState(axis1);
+  const { t } = useTranslation(); // ✅ Hook de traducción
 
   const handleAddToCart = () => {
     const product = {
       name: "Calzado Hook Axis",
-      price: 69400, // Precio como número
+      price: 69400,
       image: activeImage,
     };
     addToCart(product);
@@ -19,10 +21,10 @@ const ProductList = ({ addToCart }) => {
     <section id="products" className="py-[100px] bg-white">
       <div className="max-w-[1200px] mx-auto px-4 text-center">
         <h2 className="text-[2rem] text-[#023048] font-bold mb-6">
-          Nuestros Productos
+          {t("productSection.title")}
         </h2>
         <p className="text-[#333] text-[1.1rem] mb-10">
-          Explora nuestra gama de calzado industrial diseñado para cumplir con los más altos estándares.
+          {t("productSection.description")}
         </p>
 
         {/* Card del producto */}
@@ -61,10 +63,10 @@ const ProductList = ({ addToCart }) => {
                 onClick={handleAddToCart}
                 className="px-4 py-2 bg-[#00B4D8] text-white rounded-full text-sm hover:bg-[#019abd] transition"
               >
-                AÑADIR AL CARRITO
+                {t("productSection.addToCart")}
               </button>
               <button className="px-4 py-2 border border-[#00B4D8] text-[#00B4D8] rounded-full text-sm hover:bg-[#00B4D8] hover:text-white transition">
-                Ver Detalles
+                {t("productSection.viewDetails")}
               </button>
             </div>
           </div>
@@ -75,3 +77,4 @@ const ProductList = ({ addToCart }) => {
 };
 
 export default ProductList;
+
