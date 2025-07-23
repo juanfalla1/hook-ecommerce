@@ -8,13 +8,13 @@ const ProductList = ({ addToCart }) => {
   const { t, i18n } = useTranslation();
   const [activeImage, setActiveImage] = useState(axis1);
 
-  const isEnglish = i18n.language === "en";
+  const isEnglish = i18n.language.startsWith("en"); // más robusto que === "en"
 
   const priceCOP = 69400;
-  const priceUSD = 17.5; // Asume conversión estática o futura conversión dinámica
+  const priceUSD = 17.5;
 
   const formattedPrice = isEnglish
-    ? `$${priceUSD} USD`
+    ? `$${priceUSD.toFixed(2)} USD`
     : `$${new Intl.NumberFormat("es-CO").format(priceCOP)} COP`;
 
   const handleAddToCart = () => {
@@ -48,7 +48,7 @@ const ProductList = ({ addToCart }) => {
                 <img
                   key={i}
                   src={img}
-                  alt={`Vista ${i + 1}`}
+                  alt={`${t("product.view")} ${i + 1}`}
                   className={`w-10 h-10 object-cover cursor-pointer rounded ${
                     activeImage === img ? "ring-2 ring-[#00B4D8]" : ""
                   } transition-transform duration-200 hover:scale-110`}
@@ -84,5 +84,6 @@ const ProductList = ({ addToCart }) => {
 };
 
 export default ProductList;
+
 
 

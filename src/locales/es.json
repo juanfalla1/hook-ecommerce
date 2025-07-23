@@ -114,6 +114,7 @@
     "viewDetails": "Ver Detalles"
   },
   "product": {
-    "name": "Calzado Hook Axis"
+    "name": "Calzado Hook Axis",
+    "view": "Vista"
   }
 }
