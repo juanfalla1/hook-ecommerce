@@ -19,7 +19,7 @@ const ProductList = ({ addToCart }) => {
 
   const handleAddToCart = () => {
     const product = {
-      name: t("footwear Hook Axis"),
+      name: t("shoes.footwear"),
       price: isEnglish ? priceUSD : priceCOP,
       image: activeImage,
     };
@@ -36,7 +36,6 @@ const ProductList = ({ addToCart }) => {
           {t("productSection.description")}
         </p>
 
-        {/* Card del producto */}
         <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
           <div className="relative h-[300px] bg-gray-100">
             <img
@@ -44,7 +43,6 @@ const ProductList = ({ addToCart }) => {
               alt={t("shoes.footwear")}
               className="object-contain w-full h-full transition-transform duration-300 transform hover:scale-105"
             />
-            {/* Miniaturas clicables */}
             <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 bg-white bg-opacity-80 px-2 py-1 rounded-full shadow-sm">
               {[axis1, axis2, axis3].map((img, i) => (
                 <img
@@ -62,7 +60,7 @@ const ProductList = ({ addToCart }) => {
 
           <div className="p-6 text-left">
             <h3 className="text-xl font-bold text-[#023048]">
-              {t("footwear Hook Axis")}
+              {t("shoes.footwear")}
             </h3>
             <p className="text-lg text-[#00B4D8] font-semibold mb-4">
               {formattedPrice}
