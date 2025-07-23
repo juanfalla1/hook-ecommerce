@@ -1,17 +1,26 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next"; // ✅ Importante
+import { useTranslation } from "react-i18next";
 import axis1 from "../assets/axis1.jpg";
 import axis2 from "../assets/axis2.jpg";
 import axis3 from "../assets/axis3.jpg";
 
 const ProductList = ({ addToCart }) => {
+  const { t, i18n } = useTranslation();
   const [activeImage, setActiveImage] = useState(axis1);
-  const { t } = useTranslation(); // ✅ Hook de traducción
+
+  const isEnglish = i18n.language.startsWith("en");
+
+  const priceCOP = 69400;
+  const priceUSD = 17.5;
+
+  const formattedPrice = isEnglish
+    ? `$${priceUSD.toFixed(2)} USD`
+    : `$${new Intl.NumberFormat("es-CO").format(priceCOP)} COP`;
 
   const handleAddToCart = () => {
     const product = {
-      name: "Calzado Hook Axis",
-      price: 69400,
+      name: t("shoes.footwear"),
+      price: isEnglish ? priceUSD : priceCOP,
       image: activeImage,
     };
     addToCart(product);
@@ -32,7 +41,7 @@ const ProductList = ({ addToCart }) => {
           <div className="relative h-[300px] bg-gray-100">
             <img
               src={activeImage}
-              alt="Calzado Hook Axis"
+              alt={t("shoes.footwear")}
               className="object-contain w-full h-full transition-transform duration-300 transform hover:scale-105"
             />
             {/* Miniaturas clicables */}
@@ -53,10 +62,10 @@ const ProductList = ({ addToCart }) => {
 
           <div className="p-6 text-left">
             <h3 className="text-xl font-bold text-[#023048]">
-              Calzado Hook Axis
+              {t("shoes.footwear")}
             </h3>
             <p className="text-lg text-[#00B4D8] font-semibold mb-4">
-              ${Number(69400).toLocaleString("es-CO")} COP
+              {formattedPrice}
             </p>
             <div className="flex gap-4">
               <button
@@ -77,4 +86,5 @@ const ProductList = ({ addToCart }) => {
 };
 
 export default ProductList;
+
 
