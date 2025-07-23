@@ -13,12 +13,9 @@ i18n
       en: { translation: en },
       es: { translation: es },
     },
-    // 👇 Esto es clave
-    fallbackLng: "es",
+    fallbackLng: "es", // Idioma por defecto si no se detecta ninguno
     detection: {
-      // 👇 Orden en que se detecta el idioma
       order: ["localStorage", "navigator", "htmlTag"],
-      // 👇 Aquí se guarda el idioma preferido
       caches: ["localStorage"],
     },
     interpolation: {
@@ -26,4 +23,10 @@ i18n
     },
   });
 
+// 🔧 Forzar español como idioma inicial si no hay uno guardado
+if (!localStorage.getItem("i18nextLng")) {
+  i18n.changeLanguage("es");
+}
+
 export default i18n;
+
