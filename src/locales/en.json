@@ -22,17 +22,14 @@
     "subtitle": "Our footwear is designed to offer maximum protection without sacrificing style or comfort.",
     "items": [
       {
-        "icon": "🦺",
         "title": "Superior Safety",
         "description": "Steel toe and durable materials to protect you in any environment."
       },
       {
-        "icon": "🦶",
         "title": "All-Day Comfort",
         "description": "Ergonomic design with cushioned support for long workdays."
       },
       {
-        "icon": "🌧️",
         "title": "Modern Style",
         "description": "Footwear that blends functionality with sleek, contemporary design."
       }
@@ -41,17 +38,21 @@
   "about": {
     "title": "About HOOK",
     "description": "At HOOK, we believe industrial footwear should not only protect but inspire confidence. Our mission is to offer top-quality products combining advanced technology with modern design.",
-    "mission_title": "Mission",
-    "mission_text": "Provide high-performance garments that combine design, comfort, and status, enhancing the work experience of professionals.",
-    "vision_title": "Vision",
-    "vision_text": "Become the leading brand of premium apparel for professional environments, promoting physical and emotional well-being through design.",
-    "values_title": "Values",
-    "values_list": [
-      "Functional excellence",
-      "Purposeful comfort",
-      "User empathy",
-      "Identity-driven design"
-    ]
+    "mission": {
+      "title": "Mission",
+      "description": "Provide high-performance garments that combine design, comfort, and status, enhancing the work experience of professionals."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "Become the leading brand of premium apparel for professional environments, promoting physical and emotional well-being through design."
+    },
+    "values": {
+      "title": "Values",
+      "excellence": "Functional excellence",
+      "comfort": "Purposeful comfort",
+      "empathy": "User empathy",
+      "design": "Identity-driven design"
+    }
   },
   "testimonials": {
     "title": "Hear from those who trust HOOK for their workdays",
@@ -116,4 +117,3 @@
     "name": "Hook Axis Footwear"
   }
 }
-
