@@ -19,7 +19,7 @@ const ProductList = ({ addToCart }) => {
 
   const handleAddToCart = () => {
     const product = {
-      name: t("shoes.footwear"),
+      name: t("product.name"),
       price: isEnglish ? priceUSD : priceCOP,
       image: activeImage,
     };
@@ -40,7 +40,7 @@ const ProductList = ({ addToCart }) => {
           <div className="relative h-[300px] bg-gray-100">
             <img
               src={activeImage}
-              alt={t("shoes.footwear")}
+              alt={t("product.name")}
               className="object-contain w-full h-full transition-transform duration-300 transform hover:scale-105"
             />
             <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 bg-white bg-opacity-80 px-2 py-1 rounded-full shadow-sm">
@@ -60,7 +60,7 @@ const ProductList = ({ addToCart }) => {
 
           <div className="p-6 text-left">
             <h3 className="text-xl font-bold text-[#023048]">
-              {t("shoes.footwear")}
+              {t("product.name")}
             </h3>
             <p className="text-lg text-[#00B4D8] font-semibold mb-4">
               {formattedPrice}
@@ -84,5 +84,3 @@ const ProductList = ({ addToCart }) => {
 };
 
 export default ProductList;
-
-
