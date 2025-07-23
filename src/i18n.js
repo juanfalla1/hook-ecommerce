@@ -1,29 +1,26 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import i18n from "../i18n"; // ✅ Importante
 import axis1 from "../assets/axis1.jpg";
 import axis2 from "../assets/axis2.jpg";
 import axis3 from "../assets/axis3.jpg";
 
 const ProductList = ({ addToCart }) => {
+  const { t, i18n } = useTranslation();
   const [activeImage, setActiveImage] = useState(axis1);
-  const { t } = useTranslation();
 
-  const currentLang = i18n.language || "es";
-  const isEnglish = currentLang.startsWith("en");
+  const isEnglish = i18n.language === "en";
 
   const priceCOP = 69400;
-  const exchangeRate = 4000; // 👈 Aproximado: 1 USD = 4000 COP
-  const priceUSD = (priceCOP / exchangeRate).toFixed(2);
+  const priceUSD = 17.5; // Asume conversión estática o futura conversión dinámica
 
   const formattedPrice = isEnglish
     ? `$${priceUSD} USD`
-    : `$${priceCOP.toLocaleString("es-CO")} COP`;
+    : `$${new Intl.NumberFormat("es-CO").format(priceCOP)} COP`;
 
   const handleAddToCart = () => {
     const product = {
-      name: "Calzado Hook Axis",
-      price: priceCOP,
+      name: t("product.name"),
+      price: isEnglish ? priceUSD : priceCOP,
       image: activeImage,
     };
     addToCart(product);
@@ -43,7 +40,7 @@ const ProductList = ({ addToCart }) => {
           <div className="relative h-[300px] bg-gray-100">
             <img
               src={activeImage}
-              alt="Calzado Hook Axis"
+              alt={t("product.name")}
               className="object-contain w-full h-full transition-transform duration-300 transform hover:scale-105"
             />
             <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 bg-white bg-opacity-80 px-2 py-1 rounded-full shadow-sm">
@@ -63,7 +60,7 @@ const ProductList = ({ addToCart }) => {
 
           <div className="p-6 text-left">
             <h3 className="text-xl font-bold text-[#023048]">
-              Calzado Hook Axis
+              {t("product.name")}
             </h3>
             <p className="text-lg text-[#00B4D8] font-semibold mb-4">
               {formattedPrice}
@@ -87,4 +84,5 @@ const ProductList = ({ addToCart }) => {
 };
 
 export default ProductList;
+
 
