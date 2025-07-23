@@ -48,7 +48,7 @@ function App() {
         </select>
       </div>
 
-      <Header />
+      <Header cartItems={cartItems} /> {/* ✅ Se pasa cartItems al Header */}
       <Hero />
       <Features />
       <ProductList addToCart={addToCart} /> {/* ✅ Prop agregada */}
@@ -63,4 +63,5 @@ function App() {
 }
 
 export default App;
+
 

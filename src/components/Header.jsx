@@ -4,12 +4,16 @@ import ContactForm from "./ContactForm";
 import { useTranslation } from "react-i18next";
 import i18n from "../i18n";
 
-const Header = () => {
+const Header = ({ cartItems }) => {
   const [showContactForm, setShowContactForm] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const { t } = useTranslation();
 
   const handleLanguageChange = (e) => {
+    if (cartItems && cartItems.length > 0) {
+      alert("Debes vaciar el carrito antes de cambiar el idioma.");
+      return;
+    }
     i18n.changeLanguage(e.target.value);
   };
 
@@ -131,4 +135,3 @@ const Header = () => {
 };
 
 export default Header;
-
