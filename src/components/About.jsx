@@ -3,10 +3,10 @@ import { useTranslation } from "react-i18next";
 import imageAbout from "../assets/about-clean.png"; // Asegúrate de que exista en src/assets
 
 const About = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
-    <section id="about" className="py-[100px] bg-white" key={i18n.language}>
+    <section id="about" className="py-[100px] bg-white">
       <div className="max-w-[1200px] mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
         {/* Imagen centrada y ajustada */}
         <div className="w-full h-[400px] flex justify-center items-center">
@@ -66,6 +66,5 @@ const About = () => {
 };
 
 export default About;
-
 
 
