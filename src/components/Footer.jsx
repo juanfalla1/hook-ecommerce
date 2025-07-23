@@ -1,60 +1,57 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
-    <footer className="bg-[#023048] text-white py-12">
-      <div className="max-w-[1200px] mx-auto px-4 grid md:grid-cols-3 gap-8">
-        {/* Sobre Nosotros */}
+    <footer className="bg-[#023048] text-white py-10">
+      <div className="max-w-[1200px] mx-auto px-4 grid md:grid-cols-3 gap-10">
+        {/* About */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Sobre Nosotros</h3>
-          <div className="w-[40px] h-[3px] bg-[#00B4D8] mb-4"></div>
-          <p className="text-gray-300 leading-relaxed mb-6">
-            HOOK es una marca dedicada a ofrecer calzado industrial de alta calidad,
-            diseñado para profesionales que buscan seguridad y estilo.
-          </p>
-          <div className="flex space-x-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-[#013241] flex items-center justify-center hover:bg-[#00B4D8] transition-colors">
-              <FaFacebookF />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-[#013241] flex items-center justify-center hover:bg-[#00B4D8] transition-colors">
-              <FaInstagram />
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-[#013241] flex items-center justify-center hover:bg-[#00B4D8] transition-colors">
-              <FaTwitter />
-            </a>
+          <h4 className="text-xl font-semibold mb-2">{t("footer.about_title")}</h4>
+          <div className="h-1 w-8 bg-[#00B4D8] mb-4"></div>
+          <p className="text-gray-300 text-[0.95rem] mb-4">{t("footer.about_text")}</p>
+          <div className="flex gap-4 text-xl">
+            <a href="#" className="hover:text-[#00B4D8] transition"><FaFacebookF /></a>
+            <a href="#" className="hover:text-[#00B4D8] transition"><FaInstagram /></a>
+            <a href="#" className="hover:text-[#00B4D8] transition"><FaTwitter /></a>
           </div>
         </div>
 
-        {/* Enlaces Rápidos */}
+        {/* Quick Links */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Enlaces Rápidos</h3>
-          <div className="w-[40px] h-[3px] bg-[#00B4D8] mb-4"></div>
-          <ul className="space-y-2 text-gray-300">
-            <li><a href="#hero" className="hover:text-white transition">Inicio</a></li>
-            <li><a href="#products" className="hover:text-white transition">Productos</a></li>
-            <li><a href="#features" className="hover:text-white transition">Beneficios</a></li>
-            <li><a href="#about" className="hover:text-white transition">Nosotros</a></li>
-            <li><a href="#testimonials" className="hover:text-white transition">Testimonios</a></li>
+          <h4 className="text-xl font-semibold mb-2">{t("footer.quick_links")}</h4>
+          <div className="h-1 w-8 bg-[#00B4D8] mb-4"></div>
+          <ul className="space-y-2 text-[0.95rem]">
+            <li><a href="#home" className="hover:text-[#00B4D8] transition">{t("menu.home")}</a></li>
+            <li><a href="#products" className="hover:text-[#00B4D8] transition">{t("menu.products")}</a></li>
+            <li><a href="#benefits" className="hover:text-[#00B4D8] transition">{t("menu.benefits")}</a></li>
+            <li><a href="#about" className="hover:text-[#00B4D8] transition">{t("menu.about")}</a></li>
+            <li><a href="#testimonials" className="hover:text-[#00B4D8] transition">{t("menu.testimonials")}</a></li>
           </ul>
         </div>
 
-        {/* Contacto */}
+        {/* Contact */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Contacto</h3>
-          <div className="w-[40px] h-[3px] bg-[#00B4D8] mb-4"></div>
-          <p className="text-gray-300 mb-2">Email: contacto@grouphook.com</p>
-          <p className="text-gray-300 mb-2">Teléfono: +52 123 456 7890</p>
-          <p className="text-gray-300">Dirección: Av. Industrial 123, CDMX, México</p>
+          <h4 className="text-xl font-semibold mb-2">{t("footer.contact")}</h4>
+          <div className="h-1 w-8 bg-[#00B4D8] mb-4"></div>
+          <ul className="text-gray-300 text-[0.95rem] space-y-2">
+            <li>{t("footer.email")}</li>
+            <li>{t("footer.phone")}</li>
+            <li>{t("footer.address")}</li>
+          </ul>
         </div>
       </div>
 
-      {/* Línea inferior */}
-      <div className="mt-12 text-center text-sm text-gray-400 border-t border-[#01405a] pt-4">
-        © 2025 HOOK Calzado Industrial. Todos los derechos reservados.
+      {/* Bottom bar */}
+      <div className="text-center text-gray-400 text-sm mt-10">
+        {t("footer.rights")}
       </div>
     </footer>
   );
 };
 
 export default Footer;
+
