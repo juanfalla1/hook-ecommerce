@@ -8,7 +8,7 @@ const ProductList = ({ addToCart }) => {
   const { t, i18n } = useTranslation();
   const [activeImage, setActiveImage] = useState(axis1);
 
-  const isEnglish = i18n.language.startsWith("en"); // más robusto que === "en"
+  const isEnglish = i18n.language.startsWith("en");
 
   const priceCOP = 69400;
   const priceUSD = 17.5;
@@ -48,7 +48,7 @@ const ProductList = ({ addToCart }) => {
                 <img
                   key={i}
                   src={img}
-                  alt={`${t("product.view")} ${i + 1}`}
+                  alt={`Vista ${i + 1}`}
                   className={`w-10 h-10 object-cover cursor-pointer rounded ${
                     activeImage === img ? "ring-2 ring-[#00B4D8]" : ""
                   } transition-transform duration-200 hover:scale-110`}
@@ -84,6 +84,7 @@ const ProductList = ({ addToCart }) => {
 };
 
 export default ProductList;
+
 
 
 
