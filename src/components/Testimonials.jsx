@@ -1,41 +1,18 @@
 import React from "react";
-
-const testimonials = [
-  {
-    initials: "JM",
-    quote:
-      "Las botas HOOK Pro son las más cómodas que he usado en años. Perfectas para largas jornadas en la construcción.",
-    name: "Juan Morales",
-    position: "Constructor",
-  },
-  {
-    initials: "LC",
-    quote:
-      "El diseño de los zapatos HOOK Flex es increíble. Me siento seguro y con estilo en el trabajo.",
-    name: "Laura Castro",
-    position: "Ingeniera Industrial",
-  },
-  {
-    initials: "AP",
-    quote:
-      "HOOK Ultra es resistente y ligero. Ideal para mi trabajo en almacenes.",
-    name: "Antonio Pérez",
-    position: "Operador Logístico",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Testimonials = () => {
+  const { t } = useTranslation();
+  const testimonialItems = t("testimonials.items", { returnObjects: true });
+
   return (
-    <section
-      id="testimonials"
-      className="py-[80px] bg-[#023048] text-white"
-    >
+    <section id="testimonials" className="py-[80px] bg-[#023048] text-white">
       <div className="max-w-[1200px] mx-auto px-4">
         <h2 className="text-center text-[1.5rem] md:text-[1.8rem] font-medium mb-12 leading-snug">
-          Escucha las experiencias de quienes confían en HOOK para sus jornadas laborales.
+          {t("testimonials.title")}
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {testimonialItems.map((testimonial, index) => (
             <div
               key={index}
               className="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl border border-white border-opacity-20 transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-2xl"
@@ -65,3 +42,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+
