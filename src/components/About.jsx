@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import imageAbout from "../assets/about-clean.png"; // Asegúrate de que exista en src/assets
+import imageAbout from "../assets/about-clean.png";
 
 const About = () => {
   const { t } = useTranslation();
@@ -8,7 +8,7 @@ const About = () => {
   return (
     <section id="about" className="py-[100px] bg-white">
       <div className="max-w-[1200px] mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-        {/* Imagen centrada y ajustada */}
+        {/* Imagen */}
         <div className="w-full h-[400px] flex justify-center items-center">
           <img
             src={imageAbout}
@@ -17,7 +17,7 @@ const About = () => {
           />
         </div>
 
-        {/* Contenido textual */}
+        {/* Contenido textual principal (con TÍTULO Y DESCRIPCIÓN traducibles) */}
         <div>
           <h3 className="text-[2rem] text-[#023048] font-bold mb-6">
             {t("about.title")}
@@ -66,5 +66,6 @@ const About = () => {
 };
 
 export default About;
+
 
 
