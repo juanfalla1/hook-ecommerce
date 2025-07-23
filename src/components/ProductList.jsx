@@ -19,7 +19,7 @@ const ProductList = ({ addToCart }) => {
 
   const handleAddToCart = () => {
     const product = {
-      name: t("shoes.footwear"),
+      name: t("footwear Hook Axis"),
       price: isEnglish ? priceUSD : priceCOP,
       image: activeImage,
     };
@@ -62,7 +62,7 @@ const ProductList = ({ addToCart }) => {
 
           <div className="p-6 text-left">
             <h3 className="text-xl font-bold text-[#023048]">
-              {t("shoes.footwear")}
+              {t("footwear Hook Axis")}
             </h3>
             <p className="text-lg text-[#00B4D8] font-semibold mb-4">
               {formattedPrice}
