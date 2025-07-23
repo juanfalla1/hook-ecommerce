@@ -116,6 +116,16 @@
   "product": {
     "name": "Hook Axis Footwear",
     "view": "View"
+  },
+  "shoes": {
+    "footwear": "Hook Axis Footwear"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty.",
+    "remove": "Remove",
+    "total": "Total",
+    "checkout": "Checkout"
   }
 }
 

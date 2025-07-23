@@ -116,6 +116,15 @@
   "product": {
     "name": "Calzado Hook Axis",
     "view": "Vista"
+  },
+  "shoes": {
+    "footwear": "Hook Axis Footwear"
+  },
+  "cart": {
+    "title": "Tu Carrito",
+    "empty": "Tu carrito está vacío.",
+    "remove": "Eliminar",
+    "total": "Total",
+    "checkout": "Finalizar Compra"
   }
 }
-
