@@ -116,5 +116,8 @@
   "product": {
     "name": "Hook Axis Footwear",
     "view": "View"
+  },
+  "shoes": {
+    "footwear": "Hook Axis Footwear"
   }
 }
