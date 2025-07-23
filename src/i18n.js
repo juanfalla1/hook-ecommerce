@@ -13,17 +13,19 @@ i18n
       en: { translation: en },
       es: { translation: es },
     },
-    // 👇 Esto es clave
     fallbackLng: "es",
     detection: {
-      // 👇 Orden en que se detecta el idioma
       order: ["localStorage", "navigator", "htmlTag"],
-      // 👇 Aquí se guarda el idioma preferido
       caches: ["localStorage"],
     },
     interpolation: {
       escapeValue: false,
     },
+    debug: false, // puedes poner true para ver en consola qué idioma se está usando
   });
 
+// 👇 Esto asegura que se aplique correctamente el idioma desde localStorage
+i18n.changeLanguage(localStorage.getItem("i18nextLng") || "es");
+
 export default i18n;
+
