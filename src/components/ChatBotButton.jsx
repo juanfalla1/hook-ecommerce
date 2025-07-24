@@ -43,7 +43,7 @@ const ChatBotButton = () => {
 
       {/* Ventana del chatbot */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 h-96 bg-white border rounded-lg shadow-lg z-50 flex flex-col">
+        <div className="fixed bottom-24 right-6 w-80 max-w-[90%] h-96 bg-white border rounded-lg shadow-lg z-50 flex flex-col">
           <div className="bg-[#023048] text-white p-3 font-bold rounded-t-lg">
             Asistente HOOK
           </div>
@@ -62,32 +62,35 @@ const ChatBotButton = () => {
             ))}
           </div>
 
-          {/* Área de entrada + botón de WhatsApp */}
-          <div className="p-3 border-t flex gap-2 items-center">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              className="flex-1 border border-gray-300 rounded px-2 py-1 text-sm"
-              placeholder="Escribe tu pregunta..."
-              onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            />
-            <button
-              onClick={handleSend}
-              className="bg-[#00B4D8] text-white px-3 py-1 rounded text-sm"
-            >
-              Enviar
-            </button>
+          {/* Área de entrada + botón de WhatsApp adaptado */}
+          <div className="p-3 border-t flex flex-col sm:flex-row gap-2 sm:items-center">
+            <div className="flex w-full gap-2">
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                className="flex-1 border border-gray-300 rounded px-2 py-1 text-sm"
+                placeholder="Escribe tu pregunta..."
+                onKeyDown={(e) => e.key === "Enter" && handleSend()}
+              />
+              <button
+                onClick={handleSend}
+                className="bg-[#00B4D8] text-white px-3 py-1 rounded text-sm"
+              >
+                Enviar
+              </button>
+            </div>
 
             {/* Botón de WhatsApp */}
             <a
               href="https://wa.me/573209887985?text=Hola,%20quiero%20hablar%20con%20un%20asesor"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-500 text-white px-2 py-1 rounded text-sm flex items-center justify-center"
+              className="mt-2 sm:mt-0 bg-green-500 text-white px-3 py-1 rounded text-sm flex items-center justify-center w-full sm:w-auto"
               title="Hablar por WhatsApp"
             >
-              <FaWhatsapp className="w-5 h-5" />
+              <FaWhatsapp className="w-5 h-5 mr-2" />
+              WhatsApp
             </a>
           </div>
         </div>
