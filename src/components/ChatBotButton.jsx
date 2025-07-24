@@ -1,10 +1,15 @@
 import React, { useState } from "react";
-import { FaComments } from "react-icons/fa"; // ícono de chat
+import { FaComments } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 const ChatBotButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     { from: "bot", text: "¡Hola! ¿En qué puedo ayudarte hoy?" },
+    {
+      from: "bot",
+      text: "Si lo prefieres, puedes hablar con un asesor por WhatsApp dando clic en el ícono de WhatsApp aquí abajo. 📲",
+    },
   ]);
   const [input, setInput] = useState("");
 
@@ -27,7 +32,7 @@ const ChatBotButton = () => {
 
   return (
     <>
-      {/* Botón flotante estilo burbuja con animación */}
+      {/* Botón flotante estilo burbuja */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 rounded-full border-4 border-[#007a99] bg-[#00B4D8] text-white shadow-lg animate-pulse hover:scale-105 transition-transform"
@@ -56,7 +61,9 @@ const ChatBotButton = () => {
               </div>
             ))}
           </div>
-          <div className="p-3 border-t flex gap-2">
+
+          {/* Área de entrada + botón de WhatsApp */}
+          <div className="p-3 border-t flex gap-2 items-center">
             <input
               type="text"
               value={input}
@@ -71,6 +78,17 @@ const ChatBotButton = () => {
             >
               Enviar
             </button>
+
+            {/* Botón de WhatsApp */}
+            <a
+              href="https://wa.me/573209887985?text=Hola,%20quiero%20hablar%20con%20un%20asesor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-500 text-white px-2 py-1 rounded text-sm flex items-center justify-center"
+              title="Hablar por WhatsApp"
+            >
+              <FaWhatsapp className="w-5 h-5" />
+            </a>
           </div>
         </div>
       )}
@@ -79,3 +97,4 @@ const ChatBotButton = () => {
 };
 
 export default ChatBotButton;
+
