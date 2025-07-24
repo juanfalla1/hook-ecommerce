@@ -62,9 +62,9 @@ const ChatBotButton = () => {
             ))}
           </div>
 
-          {/* Input + Botones */}
-          <div className="p-3 border-t flex flex-col sm:flex-row gap-2 sm:items-center">
-            <div className="flex w-full gap-2">
+          {/* Entrada + botones */}
+          <div className="p-3 border-t flex flex-col gap-2">
+            <div className="flex gap-2 w-full">
               <input
                 type="text"
                 value={input}
@@ -73,9 +73,12 @@ const ChatBotButton = () => {
                 placeholder="Escribe tu pregunta..."
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
               />
+            </div>
+
+            <div className="flex gap-2 w-full flex-col sm:flex-row">
               <button
                 onClick={handleSend}
-                className="bg-[#00B4D8] text-white px-3 py-1 rounded text-sm"
+                className="bg-[#00B4D8] text-white px-3 py-1 rounded text-sm w-full sm:w-auto"
               >
                 Enviar
               </button>
@@ -83,7 +86,7 @@ const ChatBotButton = () => {
                 href="https://wa.me/573209887985?text=Hola,%20quiero%20hablar%20con%20un%20asesor"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 text-white px-3 py-1 rounded text-sm flex items-center gap-1"
+                className="bg-green-500 text-white px-3 py-1 rounded text-sm flex items-center justify-center gap-1 w-full sm:w-auto"
                 title="Hablar por WhatsApp"
               >
                 <FaWhatsapp className="w-4 h-4" />
@@ -98,4 +101,3 @@ const ChatBotButton = () => {
 };
 
 export default ChatBotButton;
-
