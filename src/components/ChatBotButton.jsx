@@ -43,7 +43,7 @@ const ChatBotButton = () => {
 
       {/* Ventana del chatbot */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-[22rem] max-w-[90vw] h-96 bg-white border rounded-lg shadow-lg z-50 flex flex-col">
+        <div className="fixed bottom-24 right-6 w-full max-w-[90vw] md:w-[22rem] md:max-w-none h-96 bg-white border rounded-lg shadow-lg z-50 flex flex-col">
           <div className="bg-[#023048] text-white p-3 font-bold rounded-t-lg">
             Asistente HOOK
           </div>
@@ -82,6 +82,7 @@ const ChatBotButton = () => {
               </button>
             </div>
 
+            {/* Botón WhatsApp */}
             <a
               href="https://wa.me/573209887985?text=Hola,%20quiero%20hablar%20con%20un%20asesor"
               target="_blank"
