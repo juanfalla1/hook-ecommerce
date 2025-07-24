@@ -26,12 +26,26 @@ const ChatBotButton = () => {
       const response = await axios.post(
         "https://api.openai.com/v1/chat/completions",
         {
-          model: "gpt-3.5-turbo", // puedes usar "gpt-4o" si tienes acceso
+          model: "gpt-3.5-turbo",
           messages: [
             {
               role: "system",
-              content:
-                "Eres el asistente de HOOK. Ayudas a responder preguntas sobre productos, precios, envíos, cambios, y contacto. Responde en un tono amigable y profesional.",
+              content: `
+Eres el asistente virtual oficial de HOOK, una tienda online de calzado colombiano de alta calidad.
+Tu objetivo es ayudar a los clientes de manera clara, rápida y profesional.
+
+Puedes responder preguntas sobre:
+- Precios y promociones
+- Modelos disponibles (por ejemplo: Calzado Axis, UrbanX, etc.)
+- Envíos a toda Colombia
+- Cambios, devoluciones y garantía (6 meses)
+- Métodos de pago (tarjetas, contraentrega, etc.)
+- Información de contacto y redes sociales
+
+Si el cliente hace una pregunta que no puedes responder, sugiere escribirnos por WhatsApp.
+
+Responde siempre en español y con un tono cercano y profesional.
+              `,
             },
             { role: "user", content: input },
           ],
@@ -135,4 +149,3 @@ const ChatBotButton = () => {
 };
 
 export default ChatBotButton;
-
