@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaComments, FaWhatsapp } from "react-icons/fa";
+import axios from "axios";
 
 const ChatBotButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,31 +8,60 @@ const ChatBotButton = () => {
     { from: "bot", text: "¡Hola! ¿En qué puedo ayudarte hoy?" },
     {
       from: "bot",
-      text: "Si lo prefieres, puedes hablar con un asesor por WhatsApp dando clic en el ícono de WhatsApp aquí abajo. 📲",
+      text: "Si lo prefieres, puedes hablar con un asesor por WhatsApp dando clic en el ícono aquí abajo. 📲",
     },
   ]);
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return;
-    const newMessages = [...messages, { from: "user", text: input }];
-    const response = generateResponse(input);
-    setMessages([...newMessages, { from: "bot", text: response }]);
-    setInput("");
-  };
 
-  const generateResponse = (question) => {
-    const lower = question.toLowerCase();
-    if (lower.includes("precio")) return "Nuestros productos van desde $69.400 COP.";
-    if (lower.includes("envío")) return "Hacemos envíos a toda Colombia.";
-    if (lower.includes("garantía")) return "Todos nuestros productos tienen garantía de 6 meses.";
-    if (lower.includes("contacto")) return "Puedes escribirnos a contacto@hookcalzado.com";
-    return "Lo siento, no entiendo tu pregunta. ¿Puedes reformularla?";
+    const newMessages = [...messages, { from: "user", text: input }];
+    setMessages(newMessages);
+    setInput("");
+    setLoading(true);
+
+    try {
+      const response = await axios.post(
+        "https://api.openai.com/v1/chat/completions",
+        {
+          model: "gpt-3.5-turbo", // puedes usar "gpt-4o" si tienes acceso
+          messages: [
+            {
+              role: "system",
+              content:
+                "Eres el asistente de HOOK. Ayudas a responder preguntas sobre productos, precios, envíos, cambios, y contacto. Responde en un tono amigable y profesional.",
+            },
+            { role: "user", content: input },
+          ],
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const aiResponse = response.data.choices[0].message.content;
+      setMessages((prev) => [...prev, { from: "bot", text: aiResponse }]);
+    } catch (error) {
+      console.error("Error al conectar con OpenAI:", error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          from: "bot",
+          text: "Lo siento, ocurrió un error al procesar tu mensaje. Intenta nuevamente.",
+        },
+      ]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <>
-      {/* Botón flotante */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 rounded-full border-4 border-[#007a99] bg-[#00B4D8] text-white shadow-lg animate-pulse hover:scale-105 transition-transform"
@@ -40,7 +70,6 @@ const ChatBotButton = () => {
         <FaComments className="w-7 h-7" />
       </button>
 
-      {/* Chatbot */}
       {isOpen && (
         <div className="fixed bottom-24 right-4 w-[95vw] max-w-sm h-96 bg-white border rounded-lg shadow-lg z-50 flex flex-col md:right-6 md:w-[22rem] md:max-w-[22rem]">
           <div className="bg-[#023048] text-white p-3 font-bold rounded-t-lg">
@@ -60,9 +89,13 @@ const ChatBotButton = () => {
                 {msg.text}
               </div>
             ))}
+            {loading && (
+              <div className="p-2 bg-gray-100 rounded text-sm text-gray-500">
+                Escribiendo...
+              </div>
+            )}
           </div>
 
-          {/* Entrada + botones */}
           <div className="p-3 border-t flex flex-col gap-2">
             <div className="flex gap-2 w-full">
               <input
@@ -78,6 +111,7 @@ const ChatBotButton = () => {
             <div className="flex gap-2 w-full flex-col sm:flex-row">
               <button
                 onClick={handleSend}
+                disabled={loading}
                 className="bg-[#00B4D8] text-white px-3 py-1 rounded text-sm w-full sm:w-auto"
               >
                 Enviar
@@ -101,3 +135,4 @@ const ChatBotButton = () => {
 };
 
 export default ChatBotButton;
+
