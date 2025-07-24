@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { FaComments } from "react-icons/fa";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaComments, FaWhatsapp } from "react-icons/fa";
 
 const ChatBotButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +31,7 @@ const ChatBotButton = () => {
 
   return (
     <>
-      {/* Botón flotante de apertura */}
+      {/* Botón flotante */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 rounded-full border-4 border-[#007a99] bg-[#00B4D8] text-white shadow-lg animate-pulse hover:scale-105 transition-transform"
@@ -41,7 +40,7 @@ const ChatBotButton = () => {
         <FaComments className="w-7 h-7" />
       </button>
 
-      {/* Ventana del chatbot */}
+      {/* Chatbot */}
       {isOpen && (
         <div className="fixed bottom-24 right-4 w-[95vw] max-w-sm h-96 bg-white border rounded-lg shadow-lg z-50 flex flex-col md:right-6 md:w-[22rem] md:max-w-[22rem]">
           <div className="bg-[#023048] text-white p-3 font-bold rounded-t-lg">
@@ -63,7 +62,7 @@ const ChatBotButton = () => {
             ))}
           </div>
 
-          {/* Entrada + botón WhatsApp */}
+          {/* Input + Botones */}
           <div className="p-3 border-t flex flex-col sm:flex-row gap-2 sm:items-center">
             <div className="flex w-full gap-2">
               <input
@@ -80,19 +79,17 @@ const ChatBotButton = () => {
               >
                 Enviar
               </button>
+              <a
+                href="https://wa.me/573209887985?text=Hola,%20quiero%20hablar%20con%20un%20asesor"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 text-white px-3 py-1 rounded text-sm flex items-center gap-1"
+                title="Hablar por WhatsApp"
+              >
+                <FaWhatsapp className="w-4 h-4" />
+                WhatsApp
+              </a>
             </div>
-
-            {/* Botón WhatsApp */}
-            <a
-              href="https://wa.me/573209887985?text=Hola,%20quiero%20hablar%20con%20un%20asesor"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 sm:mt-0 bg-green-500 text-white px-3 py-1 rounded text-sm flex items-center justify-center w-full sm:w-auto"
-              title="Hablar por WhatsApp"
-            >
-              <FaWhatsapp className="w-5 h-5 mr-2" />
-              WhatsApp
-            </a>
           </div>
         </div>
       )}
@@ -101,3 +98,4 @@ const ChatBotButton = () => {
 };
 
 export default ChatBotButton;
+
