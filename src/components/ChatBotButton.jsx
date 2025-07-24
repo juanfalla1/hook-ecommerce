@@ -32,7 +32,7 @@ const ChatBotButton = () => {
 
   return (
     <>
-      {/* Botón flotante estilo burbuja */}
+      {/* Botón flotante de apertura */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 rounded-full border-4 border-[#007a99] bg-[#00B4D8] text-white shadow-lg animate-pulse hover:scale-105 transition-transform"
@@ -43,10 +43,11 @@ const ChatBotButton = () => {
 
       {/* Ventana del chatbot */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 max-w-[90%] h-96 bg-white border rounded-lg shadow-lg z-50 flex flex-col">
+        <div className="fixed bottom-24 right-6 w-[22rem] max-w-[90vw] h-96 bg-white border rounded-lg shadow-lg z-50 flex flex-col">
           <div className="bg-[#023048] text-white p-3 font-bold rounded-t-lg">
             Asistente HOOK
           </div>
+
           <div className="flex-1 p-4 overflow-y-auto text-sm space-y-2">
             {messages.map((msg, index) => (
               <div
@@ -62,7 +63,7 @@ const ChatBotButton = () => {
             ))}
           </div>
 
-          {/* Área de entrada + botón de WhatsApp adaptado */}
+          {/* Entrada + botón WhatsApp */}
           <div className="p-3 border-t flex flex-col sm:flex-row gap-2 sm:items-center">
             <div className="flex w-full gap-2">
               <input
@@ -81,7 +82,6 @@ const ChatBotButton = () => {
               </button>
             </div>
 
-            {/* Botón de WhatsApp */}
             <a
               href="https://wa.me/573209887985?text=Hola,%20quiero%20hablar%20con%20un%20asesor"
               target="_blank"
@@ -100,4 +100,3 @@ const ChatBotButton = () => {
 };
 
 export default ChatBotButton;
-
