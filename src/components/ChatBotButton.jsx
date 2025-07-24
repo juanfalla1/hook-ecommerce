@@ -43,7 +43,7 @@ const ChatBotButton = () => {
 
       {/* Ventana del chatbot */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-full max-w-[90vw] md:w-[22rem] md:max-w-none h-96 bg-white border rounded-lg shadow-lg z-50 flex flex-col">
+        <div className="fixed bottom-24 right-4 w-[95vw] max-w-sm h-96 bg-white border rounded-lg shadow-lg z-50 flex flex-col md:right-6 md:w-[22rem] md:max-w-[22rem]">
           <div className="bg-[#023048] text-white p-3 font-bold rounded-t-lg">
             Asistente HOOK
           </div>
