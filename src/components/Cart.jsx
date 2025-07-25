@@ -1,5 +1,5 @@
 // src/components/Cart.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaShoppingCart, FaTimes } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
@@ -15,6 +15,20 @@ const Cart = ({ cartItems, removeFromCart }) => {
   };
 
   const total = cartItems.reduce((acc, item) => acc + item.price, 0);
+  const totalInCents = Math.round(total * 100); // Wompi espera el valor en centavos
+
+  // Cargar script de Wompi
+  useEffect(() => {
+    const existingScript = document.querySelector("#wompiScript");
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.src = "https://checkout.wompi.co/widget.js";
+      script.id = "wompiScript";
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  const reference = `HOOK-${Date.now()}`;
 
   return (
     <>
@@ -71,9 +85,33 @@ const Cart = ({ cartItems, removeFromCart }) => {
                 <p className="font-semibold text-[#023048]">
                   {t("cart.total")}: {formatPrice(total)}
                 </p>
-                <button className="mt-2 px-4 py-2 bg-[#00B4D8] text-white rounded text-sm hover:bg-[#019abd] transition">
-                  {t("cart.checkout")}
-                </button>
+
+                {/* Botón de pago Wompi */}
+                <form
+                  action="https://sandbox.wompi.co/checkout/"
+                  method="GET"
+                  className="mt-4"
+                >
+                  <input
+                    type="hidden"
+                    name="public-key"
+                    value="pub_test_KRSKfZcSkRVswvczWbVmfUI4qT2D1UvP"
+                  />
+                  <input type="hidden" name="currency" value="COP" />
+                  <input type="hidden" name="amount-in-cents" value={totalInCents} />
+                  <input type="hidden" name="reference" value={reference} />
+                  <input
+                    type="hidden"
+                    name="redirect-url"
+                    value="https://www.grouphook.com/thanks"
+                  />
+                  <button
+                    type="submit"
+                    className="mt-2 px-4 py-2 bg-[#00B4D8] text-white rounded text-sm hover:bg-[#019abd] transition w-full"
+                  >
+                    {t("cart.checkout")}
+                  </button>
+                </form>
               </div>
             </>
           )}
@@ -84,4 +122,3 @@ const Cart = ({ cartItems, removeFromCart }) => {
 };
 
 export default Cart;
-
