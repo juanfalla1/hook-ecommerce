@@ -1,4 +1,3 @@
-// src/components/Cart.jsx
 import React, { useState, useEffect } from "react";
 import { FaShoppingCart, FaTimes } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
@@ -15,12 +14,12 @@ const Cart = ({ cartItems, removeFromCart }) => {
   };
 
   const total = cartItems.reduce((acc, item) => acc + item.price, 0);
-  const totalInCents = Math.round(total * 100); // Wompi espera el valor en centavos
+  const totalInCents = Math.round(total * 100); // Wompi espera valor en centavos
+  const reference = `HOOK-${Date.now()}`;
 
-  // Cargar script de Wompi
+  // Cargar script de Wompi solo si no existe
   useEffect(() => {
-    const existingScript = document.querySelector("#wompiScript");
-    if (!existingScript) {
+    if (!document.querySelector("#wompiScript")) {
       const script = document.createElement("script");
       script.src = "https://checkout.wompi.co/widget.js";
       script.id = "wompiScript";
@@ -28,11 +27,9 @@ const Cart = ({ cartItems, removeFromCart }) => {
     }
   }, []);
 
-  const reference = `HOOK-${Date.now()}`;
-
   return (
     <>
-      {/* Icono flotante */}
+      {/* Botón flotante carrito */}
       <div
         onClick={() => setIsOpen(!isOpen)}
         className="fixed top-6 right-6 bg-[#00B4D8] text-white p-3 rounded-full shadow-lg cursor-pointer z-50 hover:scale-105 transition"
@@ -86,7 +83,7 @@ const Cart = ({ cartItems, removeFromCart }) => {
                   {t("cart.total")}: {formatPrice(total)}
                 </p>
 
-                {/* Botón de pago Wompi */}
+                {/* Botón de pago con Wompi */}
                 <form
                   action="https://sandbox.wompi.co/checkout/"
                   method="GET"
@@ -98,7 +95,11 @@ const Cart = ({ cartItems, removeFromCart }) => {
                     value="pub_test_KRSKfZcSkRVswvczWbVmfUI4qT2D1UvP"
                   />
                   <input type="hidden" name="currency" value="COP" />
-                  <input type="hidden" name="amount-in-cents" value={totalInCents} />
+                  <input
+                    type="hidden"
+                    name="amount-in-cents"
+                    value={totalInCents}
+                  />
                   <input type="hidden" name="reference" value={reference} />
                   <input
                     type="hidden"
@@ -122,3 +123,4 @@ const Cart = ({ cartItems, removeFromCart }) => {
 };
 
 export default Cart;
+
