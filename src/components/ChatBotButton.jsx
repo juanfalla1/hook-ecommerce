@@ -44,7 +44,7 @@ Políticas de la tienda:
 - Hacemos envíos a toda Colombia (1 a 3 días hábiles).
 - Todos los productos tienen garantía de 6 meses por defectos de fábrica.
 - Métodos de pago: tarjeta débito/crédito, Nequi, PSE y contraentrega.
-- Contacto: contacto@hookcalzado.com o WhatsApp al 320 988 7985.
+- Contacto: contacto@grouphook.com o WhatsApp al 320 988 7985.
 
 Si no sabes la respuesta a algo, invita al cliente a escribirnos por WhatsApp.
 
