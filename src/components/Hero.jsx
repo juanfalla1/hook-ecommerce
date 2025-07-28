@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative bg-[#023048] text-white pt-[150px] md:pt-[200px] pb-[80px] md:pb-[120px] text-center overflow-hidden mt-[80px]"
+      className="relative bg-[#112f46] text-white pt-[150px] md:pt-[200px] pb-[80px] md:pb-[120px] text-center overflow-hidden mt-[80px]"
     >
       {/* Imagen de fondo con opacidad baja */}
       <div
@@ -29,13 +29,13 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
             href="#products"
-            className="inline-block px-6 py-3 md:px-8 md:py-3 bg-[#00B4D8] text-white rounded-full font-semibold uppercase tracking-wider transition duration-300 border-2 border-[#00B4D8] hover:bg-transparent hover:text-[#00B4D8] hover:shadow-lg text-sm md:text-base"
+            className="inline-block px-6 py-3 md:px-8 md:py-3 bg-[#10b2cb] text-white rounded-full font-semibold uppercase tracking-wider transition duration-300 border-2 border-[#10b2cb] hover:bg-transparent hover:text-[#10b2cb] hover:shadow-lg text-sm md:text-base"
           >
             {t("hero.button_primary")}
           </a>
           <a
             href="#about"
-            className="inline-block px-6 py-3 md:px-8 md:py-3 border-2 border-white text-white rounded-full font-semibold uppercase tracking-wider hover:bg-white hover:text-[#023048] transition duration-300 text-sm md:text-base"
+            className="inline-block px-6 py-3 md:px-8 md:py-3 border-2 border-[#10b2cb] text-white rounded-full font-semibold uppercase tracking-wider hover:bg-white hover:text-[#112f46] transition duration-300 text-sm md:text-base"
           >
             {t("hero.button_secondary")}
           </a>
