@@ -1,11 +1,5 @@
 {
   "rewrites": [
-    {
-      "source": "/google7688a74591eeb301.html",
-      "destination": "/google7688a74591eeb301.html"
-    }
-  ],
-  "staticFiles": {
-    "include": ["google7688a74591eeb301.html"]
-  }
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
