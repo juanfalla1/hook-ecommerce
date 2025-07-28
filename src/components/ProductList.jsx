@@ -12,6 +12,7 @@ const ProductList = ({ addToCart }) => {
 
   const priceCOP = 69400;
   const priceUSD = 17.5;
+  const wompiPrice = 6940000; // en centavos
 
   const formattedPrice = isEnglish
     ? `$${priceUSD.toFixed(2)} USD`
@@ -65,7 +66,8 @@ const ProductList = ({ addToCart }) => {
             <p className="text-lg text-[#00B4D8] font-semibold mb-4">
               {formattedPrice}
             </p>
-            <div className="flex gap-4">
+
+            <div className="flex gap-4 mb-4">
               <button
                 onClick={handleAddToCart}
                 className="px-4 py-2 bg-[#00B4D8] text-white rounded-full text-sm hover:bg-[#019abd] transition"
@@ -76,6 +78,37 @@ const ProductList = ({ addToCart }) => {
                 {t("productSection.viewDetails")}
               </button>
             </div>
+
+            {/* Botón de pago Wompi */}
+            <form
+              action="https://checkout.wompi.co/p/"
+              method="GET"
+              target="_blank"
+            >
+              <input
+                type="hidden"
+                name="public-key"
+                value="pub_prod_VgKm4RBY3KAI16o81noHI4W4sITjp8uV"
+              />
+              <input type="hidden" name="currency" value="COP" />
+              <input type="hidden" name="amount-in-cents" value={wompiPrice} />
+              <input
+                type="hidden"
+                name="reference"
+                value="HOOK-AXIS-001"
+              />
+              <input
+                type="hidden"
+                name="redirect-url"
+                value="https://www.grouphook.com/confirmacion"
+              />
+              <button
+                type="submit"
+                className="w-full mt-2 py-2 bg-[#023048] text-white rounded-full text-sm hover:bg-[#012838] transition"
+              >
+                {isEnglish ? "Buy Now" : "Comprar ahora"}
+              </button>
+            </form>
           </div>
         </div>
       </div>
