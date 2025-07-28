@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaShoppingCart, FaTimes } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
@@ -16,16 +16,6 @@ const Cart = ({ cartItems, removeFromCart }) => {
   const total = cartItems.reduce((acc, item) => acc + item.price, 0);
   const totalInCents = Math.round(total * 100); // Wompi espera valor en centavos
   const reference = `HOOK-${Date.now()}`;
-
-  // Cargar script de Wompi solo si no existe
-  useEffect(() => {
-    if (!document.querySelector("#wompiScript")) {
-      const script = document.createElement("script");
-      script.src = "https://checkout.wompi.co/widget.js";
-      script.id = "wompiScript";
-      document.body.appendChild(script);
-    }
-  }, []);
 
   return (
     <>
@@ -83,16 +73,17 @@ const Cart = ({ cartItems, removeFromCart }) => {
                   {t("cart.total")}: {formatPrice(total)}
                 </p>
 
-                {/* Botón de pago con Wompi */}
+                {/* Botón de pago con Wompi (Checkout Pro en Producción) */}
                 <form
-                  action="https://sandbox.wompi.co/checkout/"
+                  action="https://checkout.wompi.co/p/"
                   method="GET"
+                  target="_blank"
                   className="mt-4"
                 >
                   <input
                     type="hidden"
                     name="public-key"
-                    value="pub_test_KRSKfZcSkRVswvczWbVmfUI4qT2D1UvP"
+                    value="pub_prod_VgKm4RBY3KAI16o81noHI4W4sITjp8uV"
                   />
                   <input type="hidden" name="currency" value="COP" />
                   <input
@@ -100,11 +91,15 @@ const Cart = ({ cartItems, removeFromCart }) => {
                     name="amount-in-cents"
                     value={totalInCents}
                   />
-                  <input type="hidden" name="reference" value={reference} />
+                  <input
+                    type="hidden"
+                    name="reference"
+                    value={reference}
+                  />
                   <input
                     type="hidden"
                     name="redirect-url"
-                    value="https://www.grouphook.com/thanks"
+                    value="https://www.grouphook.com/confirmacion"
                   />
                   <button
                     type="submit"
