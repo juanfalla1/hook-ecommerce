@@ -19,7 +19,7 @@ const About = () => {
 
         {/* Contenido textual */}
         <div>
-          <h3 className="text-[2rem] text-[#023048] font-bold mb-6">
+          <h3 className="text-[2rem] text-[#112f46] font-bold mb-6">
             {t("about.title")}
           </h3>
           <p className="text-[#333] text-[1.1rem] mb-6 leading-relaxed">
@@ -28,34 +28,28 @@ const About = () => {
 
           {/* Misión y Visión */}
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-[#f3f3f3] p-6 rounded-[10px] border-l-4 border-[#00B4D8] shadow-sm">
-              <h4 className="text-[#023048] text-[1.3rem] font-semibold mb-2">
+            <div className="bg-[#f8f8f8] p-6 rounded-[10px] border-l-4 border-[#10b2cb] shadow-sm">
+              <h4 className="text-[#112f46] text-[1.3rem] font-semibold mb-2">
                 {t("about.mission.title", "Misión")}
               </h4>
               <p className="text-[#333] text-[1rem] leading-relaxed whitespace-pre-line">
-                {t(
-                  "about.mission.description",
-                  "Brindar prendas de alto rendimiento que combinan diseño, comodidad y estatus, mejorando la experiencia laboral de los profesionales."
-                )}
+                {t("about.mission.description")}
               </p>
             </div>
 
-            <div className="bg-[#f3f3f3] p-6 rounded-[10px] border-l-4 border-[#00B4D8] shadow-sm">
-              <h4 className="text-[#023048] text-[1.3rem] font-semibold mb-2">
+            <div className="bg-[#f8f8f8] p-6 rounded-[10px] border-l-4 border-[#10b2cb] shadow-sm">
+              <h4 className="text-[#112f46] text-[1.3rem] font-semibold mb-2">
                 {t("about.vision.title", "Visión")}
               </h4>
               <p className="text-[#333] text-[1rem] leading-relaxed whitespace-pre-line">
-                {t(
-                  "about.vision.description",
-                  "Convertirse en la marca líder de prendas premium para entornos profesionales, promoviendo el bienestar físico y emocional a través del diseño."
-                )}
+                {t("about.vision.description")}
               </p>
             </div>
           </div>
 
           {/* Valores */}
-          <div className="mt-10 bg-[#f8f8f8] p-6 rounded-[10px] border-l-4 border-[#00B4D8] shadow-sm">
-            <h4 className="text-[#023048] text-[1.3rem] font-semibold mb-4">
+          <div className="mt-10 bg-[#f8f8f8] p-6 rounded-[10px] border-l-4 border-[#10b2cb] shadow-sm">
+            <h4 className="text-[#112f46] text-[1.3rem] font-semibold mb-4">
               {t("about.values.title")}
             </h4>
             <ul className="list-disc list-inside text-[#333] text-[1rem] space-y-1">
@@ -72,3 +66,4 @@ const About = () => {
 };
 
 export default About;
+
