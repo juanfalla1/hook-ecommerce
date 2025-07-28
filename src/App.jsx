@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom"; // ✅ solo Routes y Route
 import { useTranslation } from "react-i18next";
 
 import LoadingScreen from "./components/LoadingScreen";
@@ -13,7 +13,7 @@ import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import ChatBotButton from "./components/ChatBotButton";
 import Cart from "./components/Cart";
-import Confirmacion from "./pages/Confirmacion"; // ✅ Importar la página nueva
+import Confirmacion from "./pages/Confirmacion"; // ✅ nueva página
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -36,10 +36,9 @@ function App() {
   };
 
   return (
-    <Router>
+    <>
       <LoadingScreen />
 
-      {/* Selector de idioma visible al inicio */}
       <div className="flex justify-end pr-6 pt-4">
         <select
           value={i18n.language}
@@ -52,7 +51,6 @@ function App() {
       </div>
 
       <Routes>
-        {/* Página principal */}
         <Route
           path="/"
           element={
@@ -66,18 +64,19 @@ function App() {
               <CTA />
               <Footer />
               <ChatBotButton />
-              <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
+              <Cart
+                cartItems={cartItems}
+                removeFromCart={removeFromCart}
+              />
             </>
           }
         />
 
-        {/* Página de confirmación */}
         <Route path="/confirmacion" element={<Confirmacion />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
 export default App;
-
 
