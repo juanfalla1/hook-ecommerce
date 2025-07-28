@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+
 import LoadingScreen from "./components/LoadingScreen";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -10,7 +12,8 @@ import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import ChatBotButton from "./components/ChatBotButton";
-import Cart from "./components/Cart"; // ✅ Nuevo componente
+import Cart from "./components/Cart";
+import Confirmacion from "./pages/Confirmacion"; // ✅ Importar la página nueva
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -33,7 +36,7 @@ function App() {
   };
 
   return (
-    <>
+    <Router>
       <LoadingScreen />
 
       {/* Selector de idioma visible al inicio */}
@@ -48,17 +51,30 @@ function App() {
         </select>
       </div>
 
-      <Header cartItems={cartItems} /> {/* ✅ Se pasa cartItems al Header */}
-      <Hero />
-      <Features />
-      <ProductList addToCart={addToCart} /> {/* ✅ Prop agregada */}
-      <About />
-      <Testimonials />
-      <CTA />
-      <Footer />
-      <ChatBotButton />
-      <Cart cartItems={cartItems} removeFromCart={removeFromCart} /> {/* ✅ Carrito */}
-    </>
+      <Routes>
+        {/* Página principal */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Header cartItems={cartItems} />
+              <Hero />
+              <Features />
+              <ProductList addToCart={addToCart} />
+              <About />
+              <Testimonials />
+              <CTA />
+              <Footer />
+              <ChatBotButton />
+              <Cart cartItems={cartItems} removeFromCart={removeFromCart} />
+            </>
+          }
+        />
+
+        {/* Página de confirmación */}
+        <Route path="/confirmacion" element={<Confirmacion />} />
+      </Routes>
+    </Router>
   );
 }
 
