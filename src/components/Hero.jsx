@@ -35,7 +35,7 @@ const Hero = () => {
           </a>
           <a
             href="#about"
-            className="inline-block px-6 py-3 md:px-8 md:py-3 border-2 border-[#10b2cb] text-white rounded-full font-semibold uppercase tracking-wider hover:bg-white hover:text-[#112f46] transition duration-300 text-sm md:text-base"
+            className="inline-block px-6 py-3 md:px-8 md:py-3 border-2 border-white text-white rounded-full font-semibold uppercase tracking-wider hover:bg-white hover:text-[#112f46] transition duration-300 text-sm md:text-base"
           >
             {t("hero.button_secondary")}
           </a>
