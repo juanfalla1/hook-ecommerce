@@ -33,7 +33,7 @@ const Header = ({ cartItems }) => {
 
             {/* Botón de hamburguesa - SOLO móviles */}
             <button
-              className="ml-4 text-3xl text-[#00B4D8] md:hidden"
+              className="ml-4 text-3xl text-[#10b2cb] md:hidden"
               onClick={() => setShowMobileMenu(!showMobileMenu)}
             >
               ☰
@@ -41,15 +41,15 @@ const Header = ({ cartItems }) => {
           </div>
 
           {/* Menú en escritorio */}
-          <nav className="hidden md:flex space-x-8 text-lg font-medium text-gray-800">
-            <a href="#home" className="hover:text-[#00B4D8] transition">{t("menu.home")}</a>
-            <a href="#products" className="hover:text-[#00B4D8] transition">{t("menu.products")}</a>
-            <a href="#features" className="hover:text-[#00B4D8] transition">{t("menu.benefits")}</a>
-            <a href="#about" className="hover:text-[#00B4D8] transition">{t("menu.about")}</a>
-            <a href="#testimonials" className="hover:text-[#00B4D8] transition">{t("menu.testimonials")}</a>
+          <nav className="hidden md:flex space-x-8 text-lg font-medium text-[#112f46]">
+            <a href="#home" className="hover:text-[#10b2cb] transition">{t("menu.home")}</a>
+            <a href="#products" className="hover:text-[#10b2cb] transition">{t("menu.products")}</a>
+            <a href="#features" className="hover:text-[#10b2cb] transition">{t("menu.benefits")}</a>
+            <a href="#about" className="hover:text-[#10b2cb] transition">{t("menu.about")}</a>
+            <a href="#testimonials" className="hover:text-[#10b2cb] transition">{t("menu.testimonials")}</a>
             <button
               onClick={() => setShowContactForm(true)}
-              className="hover:text-[#00B4D8] transition"
+              className="hover:text-[#10b2cb] transition"
             >
               {t("menu.contact")}
             </button>
@@ -60,7 +60,7 @@ const Header = ({ cartItems }) => {
             <select
               onChange={handleLanguageChange}
               defaultValue={i18n.language}
-              className="border rounded px-2 py-1 text-sm text-[#023048]"
+              className="border rounded px-2 py-1 text-sm text-[#112f46]"
             >
               <option value="es">ES</option>
               <option value="en">EN</option>
@@ -75,17 +75,17 @@ const Header = ({ cartItems }) => {
       {/* Menú móvil */}
       {showMobileMenu && (
         <div className="md:hidden bg-white shadow-lg px-4 pb-4 pt-2 space-y-3 mt-[70px]">
-          <a href="#home" className="block text-[#023048]">{t("menu.home")}</a>
-          <a href="#products" className="block text-[#023048]">{t("menu.products")}</a>
-          <a href="#features" className="block text-[#023048]">{t("menu.benefits")}</a>
-          <a href="#about" className="block text-[#023048]">{t("menu.about")}</a>
-          <a href="#testimonials" className="block text-[#023048]">{t("menu.testimonials")}</a>
+          <a href="#home" className="block text-[#112f46]">{t("menu.home")}</a>
+          <a href="#products" className="block text-[#112f46]">{t("menu.products")}</a>
+          <a href="#features" className="block text-[#112f46]">{t("menu.benefits")}</a>
+          <a href="#about" className="block text-[#112f46]">{t("menu.about")}</a>
+          <a href="#testimonials" className="block text-[#112f46]">{t("menu.testimonials")}</a>
           <button
             onClick={() => {
               setShowContactForm(true);
               setShowMobileMenu(false);
             }}
-            className="block text-[#023048]"
+            className="block text-[#112f46]"
           >
             {t("menu.contact")}
           </button>
@@ -95,7 +95,7 @@ const Header = ({ cartItems }) => {
             <select
               onChange={handleLanguageChange}
               defaultValue={i18n.language}
-              className="border rounded px-2 py-1 text-sm text-[#023048] w-full"
+              className="border rounded px-2 py-1 text-sm text-[#112f46] w-full"
             >
               <option value="es">Español</option>
               <option value="en">English</option>
@@ -114,7 +114,7 @@ const Header = ({ cartItems }) => {
             >
               ×
             </button>
-            <h2 className="text-2xl font-bold mb-4 text-center text-[#023048]">
+            <h2 className="text-2xl font-bold mb-4 text-center text-[#112f46]">
               {t("menu.contact")}
             </h2>
             <ContactForm />
@@ -124,7 +124,7 @@ const Header = ({ cartItems }) => {
 
       {/* Carrito solo visible en móviles */}
       <div className="fixed top-5 right-5 z-40 md:hidden">
-        <button className="bg-[#00B4D8] text-white p-3 rounded-full shadow-lg hover:bg-[#1FB4D8]">
+        <button className="bg-[#10b2cb] text-white p-3 rounded-full shadow-lg hover:bg-[#1FB4D8]">
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
             <path d="M16 11V7a4 4 0 10-8 0v4H5l1.293 1.293A1 1 0 006 14h8a1 1 0 00.707-1.707L15 11h1z" />
           </svg>
@@ -135,3 +135,4 @@ const Header = ({ cartItems }) => {
 };
 
 export default Header;
+
