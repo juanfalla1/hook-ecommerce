@@ -20,7 +20,7 @@ const LoadingScreen = () => {
         className="w-20 h-auto mb-6 animate-pulse"
       />
       <div className="text-[#1FB4D8] text-xl tracking-wide font-medium mb-4">
-        Comodidad con estatus
+        Comodidad con estilo
       </div>
       <div className="w-[200px] h-[4px] bg-white/20 rounded-full overflow-hidden relative">
         <div className="absolute left-0 top-0 h-full w-0 bg-[#00B4D8] animate-loadingBar"></div>
