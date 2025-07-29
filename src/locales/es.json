@@ -102,7 +102,11 @@
     "about_text": "HOOK es una marca dedicada a ofrecer calzado industrial de alta calidad diseñado para profesionales que buscan seguridad y estilo.",
     "quick_links": "Enlaces rápidos",
     "contact": "Contacto",
-    "email": "Correo: contacto@grouphook.com",
+    "emails": [
+      "General: contacto@grouphook.com",
+      "Gerencia: gerencia@grouphook.com",
+      "Corporativo: corporativo@grouphook.com"
+    ],
     "phone": "Teléfono: +57 320 988 7985",
     "address": "Dirección: Calle 12 A . 38 21 APTO 308, Colombia",
     "rights": "© 2025 HOOK Industrial Footwear. Todos los derechos reservados."

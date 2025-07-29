@@ -5,10 +5,14 @@ import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   const { t } = useTranslation();
 
+  // Si usas un arreglo "emails" en tu archivo de traducción
+  const emails = t("footer.emails", { returnObjects: true });
+
   return (
     <footer className="bg-[#023048] text-white py-10">
       <div className="max-w-[1200px] mx-auto px-4 grid md:grid-cols-3 gap-10">
-        {/* About */}
+        
+        {/* Sobre nosotros */}
         <div>
           <h4 className="text-xl font-semibold mb-2">{t("footer.about_title")}</h4>
           <div className="h-1 w-8 bg-[#00B4D8] mb-4"></div>
@@ -20,7 +24,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Quick Links */}
+        {/* Enlaces rápidos */}
         <div>
           <h4 className="text-xl font-semibold mb-2">{t("footer.quick_links")}</h4>
           <div className="h-1 w-8 bg-[#00B4D8] mb-4"></div>
@@ -33,19 +37,25 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact */}
+        {/* Contacto */}
         <div>
           <h4 className="text-xl font-semibold mb-2">{t("footer.contact")}</h4>
           <div className="h-1 w-8 bg-[#00B4D8] mb-4"></div>
           <ul className="text-gray-300 text-[0.95rem] space-y-2">
-            <li>{t("footer.email")}</li>
+            {emails.map((email, index) => (
+              <li key={index}>
+                <a href={`mailto:${email.split(": ")[1]}`} className="hover:text-[#00B4D8] transition">
+                  {email}
+                </a>
+              </li>
+            ))}
             <li>{t("footer.phone")}</li>
             <li>{t("footer.address")}</li>
           </ul>
         </div>
       </div>
 
-      {/* Bottom bar */}
+      {/* Barra inferior */}
       <div className="text-center text-gray-400 text-sm mt-10">
         {t("footer.rights")}
       </div>
@@ -54,4 +64,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
 

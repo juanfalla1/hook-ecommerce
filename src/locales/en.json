@@ -102,9 +102,13 @@
     "about_text": "HOOK is a brand dedicated to offering high-quality industrial footwear designed for professionals seeking safety and style.",
     "quick_links": "Quick Links",
     "contact": "Contact",
-    "email": "Email: contacto@grouphook.com",
-    "phone": "Phone: +52 123 456 7890",
-    "address": "Address: Industrial Ave. 123, CDMX, Mexico",
+    "emails": [
+      "General: contacto@grouphook.com",
+      "Management: gerencia@grouphook.com",
+      "Corporate: corporativo@grouphook.com"
+    ],
+    "phone": "Phone: +57 320 988 7985",
+    "address": "Address: Calle 12 A . 38 21 APTO 308, Colombia",
     "rights": "© 2025 HOOK Industrial Footwear. All rights reserved."
   },
   "productSection": {
@@ -128,4 +132,3 @@
     "checkout": "Checkout"
   }
 }
-
