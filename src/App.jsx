@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom"; // ✅ solo Routes y Route
+import { Routes, Route } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import LoadingScreen from "./components/LoadingScreen";
@@ -13,7 +13,7 @@ import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import ChatBotButton from "./components/ChatBotButton";
 import Cart from "./components/Cart";
-import Confirmacion from "./pages/Confirmacion"; // ✅ nueva página
+import Confirmacion from "./pages/Confirmacion";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -57,6 +57,20 @@ function App() {
             <>
               <Header cartItems={cartItems} />
               <Hero />
+
+              {/* 🔽 Bloque SEO optimizado visible para Google */}
+              <section className="bg-white text-gray-800 px-6 py-12 max-w-4xl mx-auto text-center">
+                <h1 className="text-3xl md:text-4xl font-bold mb-4">
+                  HOOK Ecommerce: calzado industrial premium en Colombia
+                </h1>
+                <p className="text-lg leading-relaxed">
+                  En <strong>HOOK Ecommerce</strong> ofrecemos calzado especializado para jornadas laborales exigentes.
+                  Nuestra tienda en línea se enfoca en <strong>botas de trabajo</strong> y <strong>zapatos de seguridad</strong>
+                  que combinan comodidad, diseño moderno y máxima protección. Encuentra el equilibrio perfecto entre
+                  funcionalidad y estilo para profesionales que no comprometen su rendimiento.
+                </p>
+              </section>
+
               <Features />
               <ProductList addToCart={addToCart} />
               <About />
@@ -79,4 +93,5 @@ function App() {
 }
 
 export default App;
+
 
